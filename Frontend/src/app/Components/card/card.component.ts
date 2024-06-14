@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import {Ripple,initTWE} from "tw-elements";
+
+initTWE({ Ripple });
 
 @Component({
   selector: 'app-card',

@@ -1,0 +1,14 @@
+.block{
+    max-width: 380px;
+}
+.mb-4{
+    color: #94A3B8;
+}
+.mb-2{
+    color: #38BDF8;;
+}
+.inline-block{
+    background-color: rgb(51 65 85);
+    border-radius: 50px;
+    box-shadow: none;
+}
