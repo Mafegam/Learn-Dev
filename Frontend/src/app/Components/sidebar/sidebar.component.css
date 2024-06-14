@@ -1,7 +1,6 @@
 
 .fixed{
-    margin-top: 60px;
-    margin-left: 70px;
+    margin-top: 70px;
 }
 
 .separator {
@@ -9,7 +8,6 @@
     height: 1px;
     border: none;
     background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, #ebebf5c7));
-
 }
 
 .w-6 {
@@ -23,17 +21,18 @@
 
 .h-full {
     background-color: inherit;
-    /* background: linear-gradient(138deg, rgba(46, 51, 90, 1) 0%, rgba(28, 27, 51, 1) 100%); */
 }
 
 .flex {
     color: #ebebf5c7;
-    transition: .4s;
+    transition: .6s;
 }
 
 .flex:hover {
-    background: linear-gradient(218deg, rgba(97, 54, 144, 0.8267682072829132) 0%, rgba(28, 27, 51, 0) 76%);
+    /* background: linear-gradient(218deg, #613690d3 0%, rgba(28, 27, 51, 0) 76%); */
     color: white;
+    background-color: #6236903b;
+
 }
 
 .ms-3 {
@@ -44,4 +43,10 @@
 
 .ms-3:hover {
     color: white;
+}
+
+@media (max-width: 767px) {
+    .fixed{
+        width: 230px;
+    }
 }

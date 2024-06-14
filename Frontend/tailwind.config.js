@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -13,9 +14,8 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require('tw-elements/plugin.cjs'),
+  plugins: [require("tw-elements/plugin.cjs"),
   require('flowbite/plugin')
-
   ],
   darkMode: "class"
 };
