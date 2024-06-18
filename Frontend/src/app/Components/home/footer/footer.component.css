@@ -1,0 +1,14 @@
+.footerContainer{
+    background-color: inherit !important;
+}
+.logoFooter{
+    width: 140;
+    height: auto;
+}
+.divider {
+    height: 2px;
+    background-color: #2e335a;
+    width: 100%;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.1, #2e335a), color-stop(0.5, #6a1fcc), color-stop(0.98, #2e335a));
+}

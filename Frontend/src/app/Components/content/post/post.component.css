@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #E2e8f0;
+}
+
+kbd {
+    color: #7DD3FC;
+}
+
+p,
+li,
+strong {
+    color: #94A3B8;
+}
+
+.postWrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.snippet {
+    background-color: #1e293bb0;
+    border-width: 1px;
+    border-color: rgb(80, 80, 90);
+    ;
+}
+

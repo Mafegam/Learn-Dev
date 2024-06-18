@@ -15,7 +15,8 @@ module.exports = {
     extend: {},
   },
   plugins: [require("tw-elements/plugin.cjs"),
-  require('flowbite/plugin')
+  require('flowbite/plugin'),
+  require('flowbite-typography'),
   ],
   darkMode: "class"
 };

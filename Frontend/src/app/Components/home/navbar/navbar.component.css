@@ -1,5 +1,6 @@
  .navContainer {
      background-color: inherit;
+     margin: auto 200px;
      height: 70px;
      padding: 16px 32px;
  }
@@ -7,12 +8,15 @@
  .topIconFull {
      height: 35px;
      width: auto;
+     cursor: pointer;
  }
 
  .topIconResponsive {
      display: none;
      height: 35px;
      width: auto;
+     cursor: pointer;
+
  }
 
  .divider {
@@ -49,6 +53,12 @@
      gap: 25px;
  }
 
+ @media (max-width: 930px) {
+    .navContainer{
+        margin: auto;
+    }
+ }
+
 
  @media (max-width: 640px) {
      .flex {
@@ -62,10 +72,13 @@
  @media (max-width: 550px) {
      .topIconFull {
          display: none;
+         
      }
 
      .topIconResponsive {
          display: block;
+         cursor: pointer;
+
      }
     .navContainer{
         padding: 5px 15px

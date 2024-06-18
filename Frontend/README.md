@@ -12,3 +12,26 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 3. Clear Angular's default HTML 
 4. Create components withg ng generate component Component/Name --skip-tests
 5. Install libraries 
+
+## Build backend
+1. Create separate Backend folder
+2. Start Node project npm i node
+3. Create .gitignore file and add node_modules
+4. Install Express: npm i express
+5. Install Mongoose npm i mongoose
+6. Install Morgan npm i morgan
+7. Install dotenv npm i dotenv
+8. Install Nodemon npm i nodemon
+9. Import dependencies to Index.js
+
+
+
+
+
+Install Json Web Token npm i jsonwebtoken
+Install BcryptJS npm i bcryptjs
+
+
+Plugins 
+Tailwind typography
+Flowbite
