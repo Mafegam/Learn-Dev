@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;/* You can add global styles to this file, and also import other style files */
+@tailwind utilities;
+
+.toast-warning{
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(175deg, rgba(46, 51, 90, 0.671) 0%, rgba(33, 27, 51, 0.733) 100%)!important;
+}
+.toast-container .ngx-toastr {
+ 
+    padding: 15px!important;
+    text-align: center!important;
+    width: 200px!important;
+    box-shadow: 0 0 12px #000000!important;
+    top: 0!important;
+    right: 0!important;
+    width: 100%!important;
+  }
+
+  

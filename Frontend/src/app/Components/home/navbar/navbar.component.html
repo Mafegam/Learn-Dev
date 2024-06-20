@@ -2,15 +2,57 @@
     <div>
         <img src="../../../assets/learnDevLogoNoBackground.png" routerLink="" class="topIconFull">
         <img src="../../../assets/learnDevFavicoNoBackground.png" routerLink="" class="topIconResponsive">
-      </div>
+    </div>
 
+    @if(loginService.isLogedIn()){
+    <div class="flex justify-items-end gap-3">
+        <button class="text-white">About Us</button>
+        <button class="text-white" routerLink="/">Profile</button>
+        <button class="text-white" (click)="loginService.logout()">Log Out</button>
+    </div>
+    }@else {
     <div class="flex items-center gap-3">
         <button class="text-white">About Us</button>
-        <button class="text-white" routerLink="login">Log In</button>
-        <button class="signUp-btn border px-2 py-1 rounded-md" routerLink="signup">Sign
-            Up</button>
+        <button class="text-white" routerLink="/login">Log In</button>
+        <button class="signUp-btn border px-2 py-1 rounded-md" routerLink="/signup">Sign
+            Up</button> 
     </div>
+    }
+
+    <!-- @if(loginService.isLogedIn()){
+    <div class="flex justify-items-end gap-3">
+        <button class="text-white">About Us</button>
+        @if(loginService.isLogedIn()){
+        <button class="text-white" (click)="loginService.logout()">Log Out</button>
+        } @else {
+        <button class="text-white" routerLink="/login">Log In</button>
+        }
+
+        @if(loginService.isLogedIn()){
+        <button style="display:none">Log Out</button>
+        } @else {
+        <button class="signUp-btn border px-2 py-1 rounded-md" routerLink="/signup">Sign
+            Up</button> }
+
+    </div>
+    }@else {
+        <div class="flex items-center gap-3">
+            <button class="text-white">About Us</button>
+            @if(loginService.isLogedIn()){
+            <button class="text-white" (click)="loginService.logout()">Log Out</button>
+            } @else {
+            <button class="text-white" routerLink="/login">Log In</button>
+            }
+    
+            @if(loginService.isLogedIn()){
+            <button style="display:none">Log Out</button>
+            } @else {
+            <button class="signUp-btn border px-2 py-1 rounded-md" routerLink="/signup">Sign
+                Up</button> }
+        </div>
+    } -->
+
+
 </nav>
 
 <div class="divider"></div>
-

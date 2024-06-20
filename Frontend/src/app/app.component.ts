@@ -11,7 +11,8 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
     RouterOutlet, 
     HomeComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

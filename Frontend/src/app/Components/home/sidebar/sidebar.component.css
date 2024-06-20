@@ -47,6 +47,7 @@
 
 @media (min-width: 1024) {
     .fixed {
+        height: auto;
         display: hidden;
     }
 }

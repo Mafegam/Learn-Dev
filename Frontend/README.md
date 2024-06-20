@@ -31,6 +31,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Install Json Web Token npm i jsonwebtoken
 Install BcryptJS npm i bcryptjs
 
+Install cors middleware
+Install auth0/angular-jwt npm i @auth0/angular-jwt
+
+ngx toastr
 
 Plugins 
 Tailwind typography

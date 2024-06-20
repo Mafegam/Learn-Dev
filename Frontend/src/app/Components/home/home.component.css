@@ -7,11 +7,6 @@
     
 }
 
-.sidebar {
-    width: 250px;
-    z-index: 0;
-}
-
 .bg {
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
