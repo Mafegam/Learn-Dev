@@ -1,0 +1,66 @@
+.profile-bar {
+    margin-top: 20px;
+    margin-bottom: 220px;
+}
+
+.separator {
+    margin: 30px 0;
+    height: 1px;
+    border: none;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, #ebebf5c7));
+}
+
+.w-6 {
+    color: #ebebf5c7;
+    height: 40px;
+}
+
+.jsIcon {
+    color: #ebebf5c7;
+}
+
+.h-full {
+    background-color: inherit;
+}
+
+
+.flex {
+    color: #ebebf5c7;
+    transition: .6s;
+    justify-content: center;
+}
+
+/* .flex:hover {
+    color: white;
+    background-color: #6236903b;
+
+} */
+
+.ms-3 {
+    font-size: 17px;
+    color: #ebebf5c7;
+    /* transition: .4s; */
+}
+
+/* .ms-3:hover {
+    color: white;
+} */
+
+.welcome {
+    color: #7DD3FC;
+}
+
+@media (max-width: 1024px) {
+    .profile-bar {
+        width: 100%;
+        position: inherit;
+        margin-bottom: 0;
+    }
+
+    .flex-1 {
+        color: #ebebf5c7;
+        transition: .6s;
+        justify-content: center;
+    }
+
+}

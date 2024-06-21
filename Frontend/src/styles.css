@@ -2,19 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-.toast-warning{
+.toast-warning {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(175deg, rgba(46, 51, 90, 0.671) 0%, rgba(33, 27, 51, 0.733) 100%)!important;
+    background: linear-gradient(175deg, rgba(46, 51, 90, 0.671) 0%, rgba(33, 27, 51, 0.733) 100%) !important;
 }
-.toast-container .ngx-toastr {
- 
-    padding: 15px!important;
-    text-align: center!important;
-    width: 200px!important;
-    box-shadow: 0 0 12px #000000!important;
-    top: 0!important;
-    right: 0!important;
-    width: 100%!important;
-  }
 
-  
+.toast-container .ngx-toastr {
+
+    padding: 15px !important;
+    text-align: center !important;
+    width: 200px !important;
+    box-shadow: 0 0 12px #000000 !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #E2e8f0;
+}
+
+kbd {
+    color: #7DD3FC;
+}
+
+p,
+li,
+strong {
+    color: #94A3B8;
+}

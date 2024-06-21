@@ -35,6 +35,7 @@ Install cors middleware
 Install auth0/angular-jwt npm i @auth0/angular-jwt
 
 ngx toastr
+npm i multer
 
 Plugins 
 Tailwind typography

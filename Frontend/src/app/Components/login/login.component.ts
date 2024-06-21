@@ -40,7 +40,7 @@ export class LoginComponent {
             localStorage.setItem('token', response.data.token)
             this.router.navigateByUrl("/private")
           } else {
-            this.toastrService.warning("Invalid credentials")
+            this.toastrService.warning("Invalid credentials")           
           }
         });
       }
