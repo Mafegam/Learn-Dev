@@ -1,14 +1,36 @@
-.block{
-    max-width: 380px;
+.titles{
+   color: #E2E8F0;
+   transition: 0.5s;
 }
-.mb-4{
-    color: #94A3B8;
+.titles:hover{
+    color: #7DD3FC;
+ }
+
+@media(min-width: 1280px){
+    .rounded-t-lg{
+        height: 200px;
+        width: 300px;
+        object-fit: fill;
+    }
 }
-.mb-2{
-    color: #38BDF8;;
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .rounded-t-lg{
+        height: 150px;
+        width: 260px;
+        object-fit: fill;
+    }
 }
-.inline-block{
-    background-color: rgb(51 65 85);
-    border-radius: 50px;
-    box-shadow: none;
+
+
+@media only screen and (max-width: 1280px) and (min-width: 1024px){
+    .rounded-t-lg {
+        height: 200px;
+        width: 355px;
+        object-fit: fill;
+    }
+    .block{
+        max-width: 355px;
+    }
 }
+

@@ -1,5 +1,6 @@
 import { Router } from "express";
-import ControladorUsuarios from "../controllers/usersController.js"
+import ControladorUsuarios from "../Controllers/usersController.js"
+import loginController from "../Controllers/loginController.js";
 
 const enrutadoUsuarios = Router ();
 

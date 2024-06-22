@@ -7,7 +7,7 @@
     @if(loginService.isLogedIn()){
     <div class="flex justify-items-end gap-3">
         <button class="text-white">About Us</button>
-        <button class="text-white" routerLink="/">Profile</button>
+        <button class="text-white" routerLink="/private">Profile</button>
         <button class="text-white" (click)="loginService.logout()">Log Out</button>
     </div>
     }@else {

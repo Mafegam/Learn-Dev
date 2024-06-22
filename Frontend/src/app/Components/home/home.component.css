@@ -16,12 +16,9 @@
     z-index: -1;
 }
 
-.bodyHome {
-    margin: 0 0 0 250px;
-}
-
 .footer{
     background-color: inherit;
+    position: fixed;
 }
 
 @media (max-width: 639px) {

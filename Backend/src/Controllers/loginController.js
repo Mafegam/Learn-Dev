@@ -1,6 +1,6 @@
-import usersScheme from "../schemes/usersScheme.js";
 import bcryptjs from 'bcryptjs';
-import { generateToken } from "../tools/functions.js";
+import { generateToken, verifyToken } from "../Tools/functions.js";
+import usersScheme from "../schemes/usersScheme.js";
 
 const loginController = {
     login: async (solicitud, respuesta) => {
@@ -14,15 +14,19 @@ const loginController = {
             // ESTA GUARDADA EN LA BASE DE DATOS
             const validatedPassword = await bcryptjs.compare(
                 password,
-                userFound.password)
+                userFound.password
+            );
 
+            // ESTE CONDICIONAL ES PARA GENERAR EL TOKEN EN CASO DE QUE LA CONTRASENIA SEA CORRECTA
             if (validatedPassword) {
-                generateToken()
-
+                const token = await generateToken({
+                    id: userFound._id,
+                    username: userFound.username,
+                });
                 respuesta.json({
                     resultado: "Successful",
                     mensaje: "Logged in",
-                    data: userFound._id,
+                    data: token,
                 });
             } else {
                 respuesta.json({
@@ -36,6 +40,32 @@ const loginController = {
             respuesta.json({
                 resultado: "Unsuccessful",
                 mensaje: "User not found",
+                data: error,
+            });
+        }
+    },
+    validateToken: async (solicitud, respuesta) => {
+        try {
+            const token = solicitud.params.token;
+            const decoded = await verifyToken(token);
+
+            if (decoded.id) {
+                respuesta.json({
+                    resultado: "Successful",
+                    mensaje: "Valid token",
+                    data: decoded,
+                });
+            } else {
+                respuesta.json({
+                    resultado: "Unsuccessful",
+                    mensaje: "Invalid token",
+                    data: null,
+                });
+            }
+        } catch (error) {
+            respuesta.json({
+                resultado: "Unsuccessful",
+                mensaje: "Token couldn't be validated",
                 data: error,
             });
         }

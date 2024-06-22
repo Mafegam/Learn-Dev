@@ -1,5 +1,6 @@
 .footerContainer{
     background-color: inherit !important;
+    margin: 0;
 }
 .logoFooter{
     width: 140;

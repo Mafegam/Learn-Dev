@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CardComponent } from './card/card.component';
 import { FooterComponent } from './footer/footer.component';
+import { TransplantedType } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -13,5 +14,5 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+ 
 }
