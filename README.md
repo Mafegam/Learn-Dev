@@ -94,13 +94,13 @@ servidor.listen(3000, ()=>{
 ```javascript
 MONGODB_ATLAS_URI="mongodb+srv://Mafegam:secretKey@cluster0.sjfou0b.mongodb.net/usersControl?retryWrites=true&w=majority&appName=ClusterName"
 ```
-13. Test the connectiong with the database doing a GET request to the root
+13. Test the connection with the database doing a GET request to the root
  * In Postman, create a GET request using the URL ```http://localhost:3000```
 14. Create the User Model
 15. Create Controllers
 16. Test connection to database
 
-## Aditional libraries used
+## Additional libraries used
 * Json Web Token ```npm i jsonwebtoken```
 * BcryptJS ```npm i bcryptjs```
 * Cors middleware ```npm i cors-middleware```
