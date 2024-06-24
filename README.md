@@ -32,7 +32,8 @@ will be able to save their favorite tutorials to watch later.
 
 Before starting, please make sure you have the following installed:
 
-* Node.js and npm: Download Node.js
+* Node.js and npm: Download [Node.js](https://nodejs.org/en)
+
 * Angular CLI: Install globally using npm with npm install -g @angular/cli
 * MongoDB: Download MongoDB
 
