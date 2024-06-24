@@ -4,9 +4,8 @@
     top: 0;
     left: 0;
     overflow-x: hidden;
-    
-}
 
+}
 .bg {
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
@@ -16,7 +15,7 @@
     z-index: -1;
 }
 
-.footer{
+.footer {
     background-color: inherit;
     position: fixed;
 }

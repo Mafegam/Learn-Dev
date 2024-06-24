@@ -1,0 +1,116 @@
+<div class="bg">
+    <div class="navbar">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+
+    <div class="bodyContent">
+        <div class="htmlElements">
+            <div class="wrapper lg:pl-[15.5rem] max-sm:px-7">
+                <article
+                    class="mx-auto my-50 format xl:max-w-3xl format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                    <header class="mb-4 mt-50 lg:mb-6 not-format">
+
+                        <h1 class="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl">
+                            CSS Basics</h1>
+                    </header>
+                    <p class="lead">CSS (Cascading Style Sheets) is a stylesheet language used to describe the
+                        presentation of a document written in HTML or XML. CSS controls the layout, colors, fonts, and
+                        other visual aspects of web pages. Let's dive into the basics of CSS:
+                    </p>
+
+                    <h2>Introduction to CSS</h2>
+                    <p>CSS works by selecting HTML elements and applying styles to them. Styles can include things like
+                        colors, fonts, margins, padding, and more. </p>
+
+                    <h2>Anatomy of a CSS Rule</h2>
+                    <p>A CSS rule consists of a selector and a declaration block:</p>
+
+                    <pre class="snippet"><code class="language-html text-white">selector&#123;
+property: value;
+/*more properties and values*/
+&#125;</code></pre>
+
+
+
+                    <ul>
+                        <li>
+                            <b>Selector:</b> It targets HTML elements to which you want to apply styles. It can be an
+                            element selector (e.g., <kbd>h1</kbd>, <kbd>p</kbd>), class selectors (e.g.,
+                            <kbd>.container</kbd>), ID selector (e.g., <kbd>#header</kbd>), or more
+                            complex selectors (e.g., <kbd>nav</kbd>, <kbd>ul</kbd>,
+                            <kbd>a</kbd>).
+
+                        </li>
+                        <li>
+                            <b>Declaration Block:</b> OIt contains one or more declarations separated by semicolons
+                            (<kbd>;</kbd>).
+                            Each declaration includes a property (e.g., <kbd>color</kbd>, <kbd>font-size</kbd>) and its
+                            corresponding value
+                            (e.g., <kbd>blue</kbd>, <kbd>16px</kbd>).
+                        </li>
+                    </ul>
+
+
+
+                    <h2>Using CSS
+                    </h2>
+                    <p><b>Internal CSS:</b>You can include CSS within an HTML document using the
+                        <kbd>&lt;style&gt;</kbd> tag in the <kbd>&lt;head&gt;</kbd> section:
+                    </p>
+                    <pre class="snippet"><code class="language-html text-white">&lt;!DOCTYPE html&gt;   
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    /* CSS styles go here */
+    body &#123;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0l;
+    &#125;
+    h1 &#123;
+        color: blue;
+        text-align: center;
+        &#125;
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to my website!&lt;/h1&gt;
+    &lt;bpody&gt;This is a paragraph&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p><b>External CSS:</b>Alternatively, you can link to an external CSS file using the
+                        <kbd>&lt;link&gt;</kbd> tag in the <kbd>&lt;head&gt;</kbd> section:
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">&lt;!DOCTYPE html&gt;   
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to my website!&lt;/h1&gt;
+    &lt;bpody&gt;This is a paragraph&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h2> Conclussion</h2>
+                    <p>CSS is essential for styling and formatting web pages. By mastering these basics, you can create
+                        visually appealing and responsive layouts for your websites. Experiment with different
+                        selectors, properties, and values to see how they affect the appearance of HTML elements.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div clas="footer">
+        <app-footer></app-footer>
+    </div>
+
+
+</div>

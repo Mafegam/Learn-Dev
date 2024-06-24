@@ -27,5 +27,24 @@ export class ProfileBarComponent {
       this.loginService.logout();
     }
   }
+
+  // handleDelete(id: string) {
+  //   this.loginService.deleteUser(id).subscribe((res: any) => {
+  //     if (res.resultado === 'Successful') {
+  //       console.log("Va bien");
+  //       this.toastrService.success(res.mensaje);
+  //       this.loginService.deleteUser(id).subscribe((res: any) => {
+  //         if (res.resultado === 'Successful') {
+  //           this.username = res.datos;
+  //         } else {
+  //           this.toastrService.error('An error ocurred');
+  //         }
+  //       });
+  //     } else {
+  //       this.toastrService.error('An error ocurred');
+  //     }
+  //   });
+  // }
+
 }
 

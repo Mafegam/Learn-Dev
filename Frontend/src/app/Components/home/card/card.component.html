@@ -2,137 +2,187 @@
 
   <div
     class="mx-auto my-50 format xl:max-w-5xl lg:max-w-5xl format-sm sm:format-base lg:format-lg grid gap-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 md:grid-gap-5 p-4 md:p-2 xl:p-5">
-    
-    <div id="emptyField" style="color: white" *ngFor="let item of watchLaterArray">
+
+    <!-- <div id="emptyField" style="color: white" *ngFor="let item of watchLaterArray">
       <div>Title: {{ item.title }}</div>
       <button routerLink="{{ item.link }}" formtarget="_blank">Go to tutorial</button>
-    </div>
-  
+    </div> -->
+
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
-      <button  routerLink="/htmlBasics">
+      <button routerLink="/htmlBasics">
         <img class="rounded-t-lg"
           src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/320096782/original/d9dbfe5dd51fd9917e6f628067f5ca2649519ff5/je-vais-vous-apprendre-la-programmation-html-et-css.jpg"
           alt="" />
       </button>
       <div class="p-6 text-surface dark:text-white backdrop-saturate-125">
-        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/htmlBasics">HTML Basics</button>
+        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/htmlBasics">HTML
+          Basics</button>
         <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Dive into the very foundations of HTML
         </p>
-        <button id="element1" (click)="handleClick('/htmlBasics', 'HTML Basics')" onClick="this.disabled=true;"  type="button"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')" onClick="this.disabled=true;"
+          type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
+        }@else {
+        <button style="display:none" id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')"
+          onClick="this.disabled=true;" type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          data-twe-ripple-init data-twe-ripple-color="light">
+          Read Later
+        </button>
+        }
       </div>
     </div>
 
-    <div class="block rounded-lg   shadow-secondary-1 dark:bg-surface-dark">
-      <button id="wrapper2" href="#!" >
-        <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
+    <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
+      <button routerLink="/cssSelectors">
+        <img class="rounded-t-lg"
+          src="https://images.spiceworks.com/wp-content/uploads/2022/11/07122209/Lines-of-Cascading-Style-Sheets-or-CSS-code-on-a-black-screen-768x384.jpg"
+          alt="" />
       </button>
       <div class="p-6 text-surface dark:text-white backdrop-saturate-125">
-        <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/cssSelectors">CSS Selectors</button>
         <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Dive into the very foundations of HTML
         </p>
-        <button id="element2" (click)="handleClick('http://localhost:4200/cssBasics', 'CSS Basics')" onClick="this.disabled=true;" type="button"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('/cssSelectors', 'CSS Selectors')" onClick="this.disabled=true;"
+          type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
-          Read later
+          Read Later
         </button>
+        }@else {
+        <button style="display:none" id="element1" (click)="addToList('/cssSelectors', 'CSS Selectors')"
+          onClick="this.disabled=true;" type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          data-twe-ripple-init data-twe-ripple-color="light">
+          Read Later
+        </button>
+        }
       </div>
     </div>
 
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
-      <a href="#!">
-        <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-      </a>
+      <button routerLink="/jsBasics">
+        <img class="rounded-t-lg"
+          src="https://stride.com.co/wp-content/uploads/2023/01/gabriel-heinzer-g5jpH62pwes-unsplash-768x576.jpg"
+          alt="" />
+      </button>
       <div class="p-6 text-surface dark:text-white backdrop-saturate-125">
-        <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/jsBasics">Java Script
+          Basics</button>
         <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Dive into the very foundations of HTML
         </p>
-        <button type="button"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('/jsBasics', 'JavaScript Basics')" onClick="this.disabled=true;"
+          type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
-          Button
+          Read Later
         </button>
+        }@else {
+        <button style="display:none" id="element1" (click)="addToList('/jsBasics', 'JavaScript Basics')"
+          onClick="this.disabled=true;" type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          data-twe-ripple-init data-twe-ripple-color="light">
+          Read Later
+        </button>
+        }
       </div>
     </div>
 
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
-      <a href="#!">
-        <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-      </a>
-      <div class="p-6 text-surface dark:text-white">
-        <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+      <button routerLink="/htmlBasics">
+        <img class="rounded-t-lg"
+          src="https://i.insider.com/6019ac40ee136f00183a9de1?width=700"
+          alt="" />
+      </button>
+      <div class="p-6 text-surface dark:text-white backdrop-saturate-125">
+        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/htmlFormatting">HTML
+          Formatting</button>
         <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Dive into the very foundations of HTML
         </p>
-        <button type="button"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('/htmlFormatting', 'HTML Formatting')" onClick="this.disabled=true;"
+          type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
-          Button
+          Read Later
         </button>
+        }@else {
+        <button style="display:none" id="element1" (click)="addToList('/htmlFormatting', 'HTML Formatting')"
+          onClick="this.disabled=true;" type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          data-twe-ripple-init data-twe-ripple-color="light">
+          Read Later
+        </button>
+        }
       </div>
     </div>
 
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
-      <a href="#!">
-        <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-      </a>
-      <div class="p-6 text-surface dark:text-white">
-        <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+      <button routerLink="/htmlBasics">
+        <img class="rounded-t-lg"
+          src="https://www.webempresa.com/wp-content/uploads/2024/01/que-es-css-01.jpg"
+          alt="" />
+      </button>
+      <div class="p-6 text-surface dark:text-white backdrop-saturate-125">
+        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/cssBasics">CSS Basics</button>
         <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Dive into the very foundations of HTML
         </p>
-        <button type="button"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('/cssBasics', 'CSS Basics')" onClick="this.disabled=true;"
+          type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
-          Button
+          Read Later
         </button>
+        }@else {
+        <button style="display:none" id="element1" (click)="addToList('/cssBasics', 'CSS Basics')"
+          onClick="this.disabled=true;" type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          data-twe-ripple-init data-twe-ripple-color="light">
+          Read Later
+        </button>
+        }
       </div>
     </div>
 
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
-      <a href="#!">
-        <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-      </a>
-      <div class="p-6 text-surface dark:text-white">
-        <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
+      <button routerLink="/htmlBasics">
+        <img class="rounded-t-lg"
+          src="https://img.europapress.es/fotoweb/fotonoticia_20210430172721_1200.jpg"
+          alt="" />
+      </button>
+      <div class="p-6 text-surface dark:text-white backdrop-saturate-125">
+        <button id="title1" class="titles mb-2 text-xl font-medium leading-tight" routerLink="/htmlBasics">Java Script
+          Variables </button>
         <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Dive into the very foundations of HTML
         </p>
-        <button type="button"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')" onClick="this.disabled=true;"
+          type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
-          Button
+          Read Later
         </button>
-      </div>
-    </div>
-
-    <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
-      <a href="#!">
-        <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-      </a>
-      <div class="p-6 text-surface dark:text-white">
-        <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
-        <p class="mb-4 ">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <button type="button"
+        }@else {
+        <button style="display:none" id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')"
+          onClick="this.disabled=true;" type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
-          Button
+          Read Later
         </button>
+        }
       </div>
     </div>
   </div>
@@ -140,5 +190,4 @@
 
 </div>
 
-<script>
-</script>
+<app-body></app-body>

@@ -25,9 +25,8 @@
 
 
 .flex {
-    color: #ebebf5c7;
+    color: #f5ebebc7;
     transition: .6s;
-    justify-content: center;
 }
 
 /* .flex:hover {

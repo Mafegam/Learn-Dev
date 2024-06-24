@@ -35,9 +35,9 @@ export class LoginComponent {
           email: email,
           password: password,
         };
-        this.loginService.login(credentials).subscribe((response: any) => {
-          if (response.resultado === "Successful") {
-            localStorage.setItem('token', response.data.token)
+        this.loginService.login(credentials).subscribe((respuesta: any) => {
+          if (respuesta.resultado === "Successful") {
+            localStorage.setItem('token', respuesta.data.token)
             this.router.navigateByUrl("/private")
           } else {
             this.toastrService.warning("Invalid credentials")           

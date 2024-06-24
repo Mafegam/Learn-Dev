@@ -1,7 +1,10 @@
-.footerContainer{
-    background-color: inherit !important;
+.bg-inherit{
+    position: sticky;
+    z-index: 99999;
+    background-image: radial-gradient(18% 28% at 18% 71%, #20199259 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, #0F454CFF 0%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, #0C2D28FF 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #0f1729 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #0f1729 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #0f1729 24%, #073AFF00 100%), linear-gradient(125deg, #0f1729 1%, rgb(48, 7, 145) 100%);
     margin: 0;
 }
+
 .logoFooter{
     width: 140;
     height: auto;

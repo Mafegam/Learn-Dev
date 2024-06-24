@@ -1,0 +1,159 @@
+<div class="bg">
+    <div class="navbar">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+
+    <div class="bodyContent">
+        <div class="htmlElements">
+            <div class="wrapper lg:pl-[15.5rem] max-sm:px-7">
+                <article
+                    class="mx-auto my-50 format xl:max-w-3xl format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                    <header class="mb-4 mt-50 lg:mb-6 not-format">
+
+                        <h1 class="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl">
+                            CSS Selectors</h1>
+                    </header>
+                    <p class="lead">CSS selectors are patterns used to select and style HTML elements based on their tag
+                        name, class, ID, attributes, and relationships with other elements. Understanding CSS selectors
+                        is essential for effectively styling web pages.
+                    </p>
+
+                    <h2>Element Selector</h2>
+                    <p>Selects all instances of a specific HTML element.
+                    </p>
+                    <pre class="snippet"><code class="language-html text-white">body &#123;
+    font-size: 16px;
+    color: #333;
+&#125;</code></pre>
+
+                    <p>
+                        This example applies styles to all <kbd>&lt;p&gt;</kbd> (paragraph) elements, setting their font
+                        size to 16 pixels and text color
+                        to dark gray.
+                    </p>
+
+                    <h2>Class Selector</h2>
+                    <p>Selects elements with a specific class attribute.
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">.highlight &#123;
+    background-color: yellow;
+    font-weight: bold;
+&#125;</code></pre>
+
+                    <p>
+                        Apply this class to any element (<kbd>&lt;div
+                            class="highlight"&gt;...&lt;/div&gt;</kbd>) to give it a yellow background and bold text.
+                    </p>
+
+                    <h2>ID Selector</h2>
+                    <p>Selects a single element based on its unique ID attribute.
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">#header &#123;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+&#125;</code></pre>
+
+                    <p>Use <kbd>#header</kbd> to style a specific element with <kbd>id="header</kbd>, such as a header
+                        section.</p>
+
+                    <h2>Attribute Selector</h2>
+                    <p>Selects elements based on their attributes.</p>
+
+                    <ul>
+                        <li>Selects all elements with a specific attribute: <kbd>[type]</kbd></li>
+                        <li>Selects elements with a specific attribute value: <kbd>[type="text"]</kbd></li>
+                        <li>Selects elements with an attribute starting with a specific value:
+                            <kbd>[href^="https://"]</kbd>
+                        </li>
+                    </ul>
+
+                    <pre class="snippet"><code class="language-html text-white">input [type="text"] &#123;
+    width: 200px;
+    padding: 5px;
+&#125;</code></pre>
+
+                    <p>This example styles all <kbd>&lt;input&gt;</kbd> elements with <kbd>type="text"</kbd>, setting
+                        their width to 200
+                        pixels and adding 5 pixels of padding.
+                    </p>
+
+                    <h2>Descendant Selector</h2>
+                    <p>Selects elements that are descendants of a specified element.
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">ul li &#123;
+    list-style-type: square;
+&#125;</code></pre>
+
+                    <p>Styles all <kbd>&lt;li&gt;</kbd> (list items) that are descendants of <kbd>&lt;ul&gt;</kbd>
+                        (unordered list) elements, making them display with square bullets.
+                    </p>
+
+                    <h2>Child Selector</h2>
+                    <p>Selects direct child elements of a specified parent element.
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">.nav > li &#123;
+    display: inline-block;
+    margin-right: 10px;
+&#125;</code></pre>
+
+                    <p>Styles <kbd>&lt;li&gt;</kbd> elements that are direct children of elements with class
+                        <kbd>.nav</kbd>, making them display inline-block with 10 pixels of right margin.
+                    </p>
+
+                    <h2>Pseudo-classes and Pseudo-elements</h2>
+                    <p>Pseudo-classes are used to style elements when they are in a certain state or condition, like
+                        <kbd>:hover</kbd>, <kbd>:focus</kbd>, <kbd>:first-child</kbd>, etc.
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">a:hover &#123;
+    color: red;
+    text-decoration: underline;
+&#125;
+
+p::first-line &#123;
+    font-weight: bold;
+&#125;</code></pre>
+
+                    <p>In this example, links (<kbd>&lt;a&gt;</kbd>) turn red and underlined when hovered over. The
+                        first line
+                        of paragraphs (<kbd>&lt;p&gt;</kbd>) is styled in bold.
+                    </p>
+
+                    <h2>Grouping Selectors</h2>
+                    <p>Allows you to apply the same styles to multiple selectors in one declaration.
+                    </p>
+
+                    <pre class="snippet"><code class="language-html text-white">h1, p, li &#123;
+    color: blue;
+&#125;</code></pre>
+
+                    <p>This sets the text color of <kbd>&lt;h1&gt;</kbd>, <kbd>&lt;p&gt;</kbd>, and
+                        <kbd>&lt;li&gt;</kbd> elements to blue.
+                    </p>
+
+                    <h2> Conclussion</h2>
+                    <p>Understanding CSS selectors empowers you to precisely target and style elements within your HTML
+                        documents. By combining selectors intelligently, you can create visually appealing and
+                        responsive web designs.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div clas="footer">
+        <app-footer></app-footer>
+    </div>
+
+
+</div>
