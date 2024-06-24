@@ -33,32 +33,31 @@ will be able to save their favorite tutorials to watch later.
 Before starting, please make sure you have the following installed:
 
 * Node.js and npm: Download [Node.js](https://nodejs.org/en)
+* Angular CLI: Install globally using npm with ```npm install -g @angular/cli```
+* MongoDB: Create a [MondoDB](https://www.mongodb.com/) account
 
-* Angular CLI: Install globally using npm with npm install -g @angular/cli
-* MongoDB: Download MongoDB
-
-
-
-## Steps taken to build
-1. Create Github repository and sincronize with local
-2. Start Angular project with ng new Learn-Dev
-3. Clear Angular's default HTML 
+## Building the Frontend
+1. Create Github repository and clone it into local repository
+2. In the terminal, start Angular project: ```ng new Learn-Dev```
+3. Clear Angular's default HTML and CSS files 
 4. Create components withg ng generate component Component/Name --skip-tests
-5. Install libraries 
 
-## Build backend
-1. Create separate Backend folder
-2. Start Node project npm i node
+## Building the Backend
+1. Createa a Backend folder independant from the Frontend
+2. In the terminal, Node project ```npm i node```
 3. Create .gitignore file and add node_modules
-4. Install Express: npm i express
-5. Install Mongoose npm i mongoose
-6. Install Morgan npm i morgan
-7. Install dotenv npm i dotenv
-8. Install Nodemon npm i nodemon
+4. Install Express: ```npm i express```
+5. Install Mongoose ```npm i mongoose```
+6. Install Morgan ```npm i morgan```
+7. Install dotenv ```npm i dotenv```
+8. Install Nodemon ```npm i nodemon```
 9. Import dependencies to Index.js
-
-
-
+10. Set environment variables
+  * Create a `.env` file and define MongoDB connection string and other necessary variables: 
+```javascript
+MONGODB_URI=mongodb://localhost:27017/programming-tutorials
+SECRET_KEY=your_secret_key_for_jwt
+```
 
 
 Install Json Web Token npm i jsonwebtoken
