@@ -1,4 +1,4 @@
 export interface DeleteUser {
+    email: string;
     password: string;
-    confirmPassword: string;
 }

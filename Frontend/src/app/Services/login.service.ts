@@ -24,7 +24,7 @@ export class LoginService {
   }
   // VERIFICA EL TOKEN GENERADO
   verifyToken(token: string) {
-    return this.httpClient.get(`${this.API_URL}/${token}`);
+    return this.httpClient.get(`${this.API_URL}/login/${token}`);
   }
   // VERIFICA QUE EL USUARIO ESTE LOGUEADO
   isLogedIn() {

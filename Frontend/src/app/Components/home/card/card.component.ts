@@ -1,4 +1,5 @@
 import { Component, input, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Ripple, initTWE } from "tw-elements";
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -6,6 +7,7 @@ import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LoginService } from '../../../Services/login.service';
 import { BodyComponent } from '../../private/body/body.component';
+import { AddTutorial } from '../../../Interfaces/addTutorial';
 
 initTWE({ Ripple });
 
@@ -19,22 +21,13 @@ initTWE({ Ripple });
 export class CardComponent {
   loginService = inject(LoginService);
   toastrService = inject(ToastrService);
+  httpClient = inject(HttpClient);
 
-  watchLaterArray: any[] = [];
+  watchLaterList: any[] = [];
   $element1 = document.getElementById('element1')
   $emptyField: HTMLElement | null = document.getElementById('emptyField');
-
-  
-
-  
-  addToList(link: string, title: string) {
-    console.log("click test");
-    console.log(link);
-    console.log(title);
-    this.watchLaterArray.push({ link, title });
-    console.log(this.watchLaterArray);
-    this.toastrService.success("Added to your list")
-  }
+  userID: string = "";
+  API_URL = "http://localhost:3000";
 
   isLogedIn() {
     if (localStorage.getItem('token')) {
@@ -44,7 +37,34 @@ export class CardComponent {
     }
   }
 
- 
+  ngOnInit() {
+    const token: any = localStorage.getItem("token")
+    if (token) {
+      this.loginService.verifyToken(token).subscribe((response: any) => {
+        if (response.resultado === "Successful") {
+          this.userID = response.data.id;
+        } else {
+          this.loginService.logout();
+        }
+      });
+    } else {
+      this.loginService.logout();
+    }
+  }
+
+  addToList(link: string, title: string) {
+    console.log(this.userID);
+    this.watchLaterList.push({ link, title });
+    console.log(this.watchLaterList);
+    this.toastrService.success("Added to your list")
+
+    const payload = {watchLaterList: this.watchLaterList};
+    console.log(payload);
+
+    this.httpClient.put(`http://localhost:3000/login/${this.userID}`, payload).subscribe((respuesta: any) => {
+      console.log(respuesta);
+    });
+  };
 }
 
 

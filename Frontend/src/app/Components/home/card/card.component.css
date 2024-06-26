@@ -16,6 +16,14 @@
     align-content: space-around;
 }
 
+.toast-warning{
+    color: aqua;
+}
+
+#toast-container{
+    color: aqua;
+}
+
 @media(min-width: 1280px) {
     .rounded-t-lg {
         height: 200px;

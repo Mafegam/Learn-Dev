@@ -1,7 +1,7 @@
 .fixed {
     margin-top: 70px;
     z-index: 0;
-    overflow-y:auto;
+    overflow-y: auto;
 }
 
 
@@ -20,6 +20,7 @@
 
 .jsIcon {
     color: #ebebf5c7;
+  
 }
 
 .h-full {

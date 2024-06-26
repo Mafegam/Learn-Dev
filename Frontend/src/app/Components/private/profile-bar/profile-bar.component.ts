@@ -15,8 +15,10 @@ export class ProfileBarComponent {
   username: string = "";
   ngOnInit() {
     const token: any = localStorage.getItem("token")
+    console.log(token);
     if (token) {
       this.loginService.verifyToken(token).subscribe((response: any) => {
+        console.log(response);
         if (response.resultado === "Successful") {
           this.username = response.data.username;
         } else {
@@ -28,23 +30,6 @@ export class ProfileBarComponent {
     }
   }
 
-  // handleDelete(id: string) {
-  //   this.loginService.deleteUser(id).subscribe((res: any) => {
-  //     if (res.resultado === 'Successful') {
-  //       console.log("Va bien");
-  //       this.toastrService.success(res.mensaje);
-  //       this.loginService.deleteUser(id).subscribe((res: any) => {
-  //         if (res.resultado === 'Successful') {
-  //           this.username = res.datos;
-  //         } else {
-  //           this.toastrService.error('An error ocurred');
-  //         }
-  //       });
-  //     } else {
-  //       this.toastrService.error('An error ocurred');
-  //     }
-  //   });
-  // }
 
 }
 
