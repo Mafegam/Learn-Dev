@@ -67,14 +67,15 @@ const ControladorUsuarios = {
                 solicitud.params.id, solicitud.body
             );
             if (usuarioActualizado._id) {
+                console.log("Good!");
                 respuesta.json({
-                    mensaje: "Datos actualizados:",
+                    mensaje: "Datos actualizados, bien!:",
                     datos: usuarioActualizado._id,
                 });
             }
         } catch {
             console.log((solicitud.body));
-            respuesta.json({ error: true, mensaje: "Ocurrió un error al actualizar el usuario" });
+            respuesta.json({ error: true, mensaje: "Error!" });
         }
     },
 

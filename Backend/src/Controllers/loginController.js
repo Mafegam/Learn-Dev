@@ -1,6 +1,8 @@
 import bcryptjs from 'bcryptjs';
 import { generateToken, verifyToken } from "../Tools/functions.js";
 import usersScheme from "../schemes/usersScheme.js";
+import ModeloUsuario from "../schemes/usersScheme.js";
+import bcrypt from 'bcryptjs';
 
 const loginController = {
     login: async (solicitud, respuesta) => {
@@ -70,6 +72,30 @@ const loginController = {
             });
         }
     },
-}
+
+    updateUser: async (solicitud, respuesta) => {
+        
+        try {
+            console.log("Solicitud body: ", solicitud.body);
+
+            const usuarioActualizado = await ModeloUsuario.findByIdAndUpdate(
+                solicitud.params.id, solicitud.body
+            );
+            console.log("Usuario actualizado: ", usuarioActualizado);
+            if (usuarioActualizado._id) {
+                console.log("Good!");
+                respuesta.json({
+                    mensaje: "Datos actualizados!:",
+                    datos: usuarioActualizado._id,
+                });
+            }
+        } catch {
+            console.log((solicitud.body));
+            respuesta.json({ error: true, mensaje: "There was an error!" });
+        }
+    },
+}   
+
+    
 
 export default loginController;
