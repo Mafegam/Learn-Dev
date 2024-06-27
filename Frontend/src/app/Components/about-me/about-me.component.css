@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     overflow-x: hidden;
+
 }
 
 .bg {
@@ -15,29 +16,25 @@
     z-index: -1;
 }
 
+.fotoHero {
+ 
+    border-radius: 50% 0 50% 0;
+    height: 400px;
+}
+
 .footer {
     background-color: inherit;
     position: fixed;
 }
 
-.heroWrapper{
-    max-height: 500px;
-}
-.relative{
-    padding-top: 0;
-    margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #E2e8f0;
+.aboutWrapper {
+    background-color: inherit;
+    height: 100%;
+    margin-top: 150px;
+    margin-bottom: 100px;
 }
 
-kbd, b {
+h2 {
     color: #7DD3FC;
 }
 
@@ -47,24 +44,12 @@ strong {
     color: #94A3B8;
 }
 
-.text-4xl{
+.relative {
     color: white;
 }
 
-.wrapper {
-    margin-top: 25px;
-    margin-bottom: 50px;
-}
-
-.snippet {
-    background-color: #1e293bb0;
-    border-width: 1px;
-    border-color: rgb(80, 80, 90);
-    ;
-}
-
-.card{
-    z-index: 9999999;
+.absolute {
+    background-color: purple;
 }
 
 @media (max-width: 639px) {

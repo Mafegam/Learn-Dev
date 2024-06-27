@@ -1,10 +1,11 @@
 .fixed {
     margin-top: 70px;
-    z-index: 0;
+    z-index: 9999;
     overflow-y: auto;
 }
-
-
+.sr-only {
+    background-color: none;
+}
 
 .separator {
     margin: 30px 0;

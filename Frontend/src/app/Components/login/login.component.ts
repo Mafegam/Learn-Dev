@@ -34,6 +34,9 @@ export class LoginComponent {
         const credentials: Credentials = {
           email: email,
           password: password,
+          currentPassword: '',
+          confirmPassword: ''
+          
         };
         this.loginService.login(credentials).subscribe((respuesta: any) => {
           if (respuesta.resultado === "Successful") {

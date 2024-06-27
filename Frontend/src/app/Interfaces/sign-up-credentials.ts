@@ -3,5 +3,5 @@ export interface SignUpCredentials {
         password: string;
         confirmPassword: string;
         email: string;
-
+        // watchLaterList: string;
 }

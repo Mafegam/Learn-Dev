@@ -1,8 +1,8 @@
 <div class="wrapper">
     <aside id="default-sidebar"
-        class="profile-bar fixed top-0 left-0 bottom-170 z-0 w-64 lg:h-auto rounded backdrop-blur-xl top-[4.8125rem] inset-0 left-[max(0px,calc(50%-45rem))] right-auto w-[19rem]"
+        class="profile-bar fixed top-0 left-0 bottom-170 z-0 w-64 lg:h-auto rounded backdrop-blur-xl top-[4.8125rem] inset-0 left-[max(0px,calc(55%-45rem))] right-auto w-[19rem]"
         aria-label="default-sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
+        <div class="h-full px-3 py-4 overflow-y-auto ">
             <ul class="space-y-2 font-medium">
                 <!-- WELCOME -->
                 <li>
@@ -19,7 +19,7 @@
                 <!-- UPDATE PROFILE -->
                 <li>
                     <button type="button"
-                        class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white dark:hover:bg-gray-700"
+                        class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white "
                         aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -34,7 +34,7 @@
 
                     </button>
                     <!-- FORM PARA ACTUALIZAR INFO?  -->
-                    <ul id="example" class=" py-2 space-y-2">
+                    <!-- <ul id="example" class=" py-2 space-y-2">
                         <form class="space-y-4 md:space-y-6" action="#">
                             <div>
                                 <label for="username"
@@ -71,14 +71,95 @@
 
                             <button type="submit"
                                 class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
-                            >
+
                         </form>
-                    </ul>
+                    </ul> -->
+                </li>
+                <!-- DELETE -->
+                <li>
+
+                    <div id="accordion" data-accordion="collapse">
+                        <button type="button"
+                            class="deleteContainer flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500   gap-3"
+                            data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                            aria-controls="accordion-collapse">
+                            <button type="button"
+                                class="flex  w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white "
+                                aria-controls="dropdown-example2" data-collapse-toggle="dropdown-example2">
+                                <svg fill="#f5ebebc7" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+                                    viewBox="0 0 57.828 57.827" xml:space="preserve">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <g>
+                                            <g>
+                                                <circle cx="24.87" cy="13.811" r="13.811"></circle>
+                                                <path
+                                                    d="M6.972,52.484l9.718,2.56c4.215,1.109,11.004,0.979,15.173-0.293l3.93-1.205c2.209,2.614,5.505,4.281,9.188,4.281 c6.633,0,12.03-5.397,12.03-12.03c0-6.635-5.397-12.032-12.03-12.032c-1.124,0-2.207,0.167-3.239,0.456 c-2.494-3.016-5.696-5.299-9.631-6.58c-2.292,1.345-4.947,2.129-7.791,2.129c-2.857,0-5.527-0.792-7.826-2.149 c-7.347,2.302-12.55,7.888-15.278,15.2C-0.311,46.905,2.757,51.374,6.972,52.484z M44.95,35.346 c5.732,0,10.378,4.646,10.378,10.38c0,5.732-4.646,10.379-10.378,10.379s-10.379-4.646-10.379-10.379 C34.572,39.992,39.217,35.346,44.95,35.346z">
+                                                </path>
+                                                <path
+                                                    d="M39.138,51.036c0.365,0.402,0.866,0.604,1.37,0.604c0.446,0,0.896-0.16,1.251-0.485l3.19-2.916l3.189,2.916 c0.356,0.325,0.805,0.485,1.251,0.485c0.502,0,1.003-0.203,1.37-0.604c0.691-0.755,0.638-1.93-0.118-2.621l-2.943-2.691 l2.943-2.691c0.756-0.691,0.809-1.864,0.118-2.621c-0.691-0.757-1.864-0.808-2.621-0.118l-3.189,2.918l-3.19-2.918 c-0.757-0.691-1.929-0.638-2.621,0.118c-0.691,0.757-0.639,1.93,0.118,2.621l2.944,2.691l-2.944,2.691 C38.5,49.106,38.448,50.281,39.138,51.036z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <button class="accordion flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Delete
+                                    account</button>
+                            </button>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                            </svg>
+                        </button>
+                        <div id="accordion-collapse-body-1" class="hidden"
+                            aria-labelledby="accordion-collapse-heading-1">
+                            <div class="p-5">
+                                <p class="mb-2  dark:text-gray-400">Are you sure you want to delete your
+                                    account? All your information will be permanently deleted.</p>
+                                <button type="button"
+                                    class="confirmation flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white "
+                                    aria-controls="dropdown-example2" data-collapse-toggle="dropdown-example2">
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+
+
+                                    <button class=" ms-3 text-left rtl:text-right whitespace-nowrap"
+                                        (click)="handleDelete(userID)">Yes, I want to delete it</button>
+                                </button>
+
+                                <button
+                                    class="cancel flex  w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white"
+                                    data-accordion-target="#accordion-collapse-body-1">
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                                    </svg>
+                                    <button class=" flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">No, close
+                                        this window!</button>
+                                </button>
+
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+
+                    </div>
+
                 </li>
                 <!-- LOG OUT -->
                 <li>
                     <button type="button"
-                        class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group"
                         aria-controls="dropdown-example2" data-collapse-toggle="dropdown-example2">
                         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -96,6 +177,10 @@
 
                 </li>
             </ul>
+
         </div>
+
     </aside>
+
+
 </div>

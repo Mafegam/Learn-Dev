@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validator, FormGroupName, 
 import { LoginService } from '../../Services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { SignUpCredentials } from '../../Interfaces/sign-up-credentials';
+import { isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -23,6 +24,7 @@ export class SignUpComponent {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
+    // watchLaterList: new FormControl('')
   });
 
   handleSubmit() {
@@ -32,14 +34,16 @@ export class SignUpComponent {
       const password = this.newCredentials.value.password;
       const confirmPassword = this.newCredentials.value.confirmPassword;
       const email = this.newCredentials.value.email;
+      // const watchLaterList = undefined;
 
-      if (typeof username === "string" && typeof email === "string" && typeof password === "string" && typeof confirmPassword === "string") {
+      if (typeof username === "string" && typeof email === "string" && typeof password === "string" && typeof confirmPassword === "string" /*&& typeof watchLaterList == "undefined"*/) {
         if (password === confirmPassword) {
           const signUpCredentials: SignUpCredentials = {
             username: username,
             password: password,
             confirmPassword: confirmPassword,
             email: email,
+            // watchLaterList: '',
           };
           console.log("Datos recibidos: ", signUpCredentials);
           this.loginService.signup(signUpCredentials).subscribe((respuesta: any) => {

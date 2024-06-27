@@ -1,3 +1,11 @@
+h1{
+    font-size: 30px;
+}
+
+.wrapper{
+    height: 200px;
+}
+
 .profile-bar {
     margin-top: 20px;
     margin-bottom: 220px;
@@ -19,34 +27,65 @@
     color: #ebebf5c7;
 }
 
+.space-y-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .h-full {
     background-color: inherit;
 }
 
-
-.flex {
-    color: #f5ebebc7;
-    transition: .6s;
+.mb-2 {
+    color: #7DD3FC
 }
 
-/* .flex:hover {
-    color: white;
-    background-color: #6236903b;
+.divider {
+    height: 2px;
+    background-color: #2e335a;
+    width: 100%;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.1, #2e335a), color-stop(0.5, #6a1fcc), color-stop(0.98, #2e335a));
+}
 
-} */
+#accordion-collapse {
+    background-color: none;
+}
+
+.confirmation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex {
+    transition: .6s;
+    background-color: inherit;
+}
 
 .ms-3 {
     font-size: 17px;
     color: #ebebf5c7;
-    /* transition: .4s; */
 }
-
-/* .ms-3:hover {
-    color: white;
-} */
 
 .welcome {
     color: #7DD3FC;
+}
+
+.cancel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.confirmation:hover {
+    background-color: rgba(62, 88, 70, 0.63);
+}
+
+.cancel:hover {
+    background-color: rgba(77, 39, 39, 0.651);
 }
 
 @media (max-width: 1024px) {

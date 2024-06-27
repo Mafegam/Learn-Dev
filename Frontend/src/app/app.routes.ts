@@ -11,9 +11,10 @@ import { FormattingComponent } from './Components/content/formatting/formatting.
 import { CssBasicsComponent } from './Components/content/css/css-basics/css-basics.component';
 import { CssSelectorsComponent } from './Components/content/css/css-selectors/css-selectors.component';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
+import { AboutMeComponent } from './Components/about-me/about-me.component';
 
-import { PracticeResourcesComponent } from './Components/practice-resources/practice-resources.component';
 import { DownloadResourcesComponent } from './Components/download-resources/download-resources.component';
+import { CarousselComponent } from './Components/caroussel/caroussel.component';
 
 export const routes: Routes = [
     { path: 'landingPage', title: "Welcome to Dev Learn", component: LandingPageComponent },
@@ -26,8 +27,9 @@ export const routes: Routes = [
     },
     { path: 'login', title: "Login", component: LoginComponent },
     { path: 'signup', title: "Sign Up", component: SignUpComponent },
-    { path: 'practiceResources', title: "Practical Resources", component: PracticeResourcesComponent },
-    { path: 'downloadResources', title: "Download Resources", component: DownloadResourcesComponent },
+    { path: 'caroussel', title: "Practical Resources", component: CarousselComponent },
+    { path: 'additionalResources', title: "Additional Resources", component: DownloadResourcesComponent },
+    { path: 'about', title: "About Me", component: AboutMeComponent },
 
 
     { path: 'htmlBasics', title: "HTML Basics ", component: htmlBasicsComponent },

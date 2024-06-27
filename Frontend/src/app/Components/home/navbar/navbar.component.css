@@ -3,6 +3,7 @@
      margin: auto 200px;
      height: 70px;
      padding: 16px 32px;
+     display: sticky;
  }
 
  .topIconFull {
@@ -53,26 +54,35 @@
      gap: 25px;
  }
 
- @media (max-width: 930px) {
-    .navContainer{
-        margin: auto;
-    }
+ @media (max-width: 385px) {
+     .flex {
+         gap: 10px;
+     }
  }
 
+ @media (max-width: 550px) {
+
+     button {
+         font-size: 3.1vw;
+     }
+
+     .navContainer {
+         padding: 5px 15px
+     }
+
+     .flex {
+         gap: 10px;
+     }
+ }
 
  @media (max-width: 640px) {
      .flex {
          display: flex;
      }
-     .navContainer{
-        display: sticky;
-    }
- }
 
- @media (max-width: 550px) {
      .topIconFull {
          display: none;
-         
+
      }
 
      .topIconResponsive {
@@ -80,14 +90,11 @@
          cursor: pointer;
 
      }
-    .navContainer{
-        padding: 5px 15px
-    }
 
  }
 
- @media (max-width: 385px){
-    .flex{
-        gap: 10px;
-    }
+ @media (max-width: 930px) {
+     .navContainer {
+         margin: auto;
+     }
  }

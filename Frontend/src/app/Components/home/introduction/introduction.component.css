@@ -1,0 +1,40 @@
+.introWrapper {
+    max-width: 800px;
+    margin: auto
+}
+
+.bg-gray-50 {
+    background-color: #1e293b67;
+    border-width: 1px;
+    border-color: rgb(80, 80, 90);
+}
+
+.title {
+    text-align: center;
+
+}
+
+.snippet {
+    border-left: 7px solid green;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #E2e8f0;
+}
+
+kbd,
+b, button {
+    color: #7DD3FC;
+}
+
+p,
+li,
+strong {
+    color: #94A3B8;
+}

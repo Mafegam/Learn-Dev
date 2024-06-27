@@ -7,7 +7,6 @@ import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LoginService } from '../../../Services/login.service';
 import { BodyComponent } from '../../private/body/body.component';
-import { AddTutorial } from '../../../Interfaces/addTutorial';
 
 initTWE({ Ripple });
 
@@ -23,7 +22,7 @@ export class CardComponent {
   toastrService = inject(ToastrService);
   httpClient = inject(HttpClient);
 
-  watchLaterList: any[] = [];
+  // watchLaterList: any[] = [];
   $element1 = document.getElementById('element1')
   $emptyField: HTMLElement | null = document.getElementById('emptyField');
   userID: string = "";
@@ -52,19 +51,20 @@ export class CardComponent {
     }
   }
 
-  addToList(link: string, title: string) {
-    console.log(this.userID);
-    this.watchLaterList.push({ link, title });
-    console.log(this.watchLaterList);
-    this.toastrService.success("Added to your list")
+  // addToList(link: string, title: string) {
+  //   console.log(this.userID);
+  //   this.watchLaterList.push({ link, title });
+  //   console.log(this.watchLaterList);
+  //   this.toastrService.success("Added to your list")
 
-    const payload = {watchLaterList: this.watchLaterList};
-    console.log(payload);
+  //   const payload = {watchLaterList: [this.watchLaterList]};
+  //   console.log("Payload: " ,payload);
 
-    this.httpClient.put(`http://localhost:3000/login/${this.userID}`, payload).subscribe((respuesta: any) => {
-      console.log(respuesta);
-    });
-  };
+  //   this.httpClient.put(`http://localhost:3000/users/${this.userID}`, payload).subscribe((respuesta: any) => {
+  //     console.log("Respuesta: ", respuesta);
+  //   });
+
+  // };
 }
 
 
