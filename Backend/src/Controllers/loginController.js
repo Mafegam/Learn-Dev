@@ -1,6 +1,6 @@
 import bcryptjs from 'bcryptjs';
 import { generateToken, verifyToken } from "../Tools/functions.js";
-import esquemaUsuario from '../schemes/usersScheme.js';
+import usersScheme from '../schemes/usersScheme.js';
 import bcrypt from 'bcryptjs';
 
 const loginController = {
@@ -8,7 +8,7 @@ const loginController = {
         try {
             const { email, password } = solicitud.body;
             // ESTE METODO ES PARA VERIFICAR QUE EL EMAIL EXISTA EN LA BASE DE DATOS
-            const userFound = await esquemaUsuario.findOne({
+            const userFound = await usersScheme.findOne({
                 email: email,
             });
             // ESTE METODO ES PARA COMPARAR LA CONTRASENA QUE INGRESAR EL USUARIO CON LA QUE 
