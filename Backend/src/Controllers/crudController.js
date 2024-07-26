@@ -1,17 +1,17 @@
 import usersScheme from "../schemes/usersScheme.js";
-import ModeloUsuario from "../schemes/usersScheme.js";
 import bcrypt from 'bcryptjs';
 
 const ControladorUsuarios = {
     crearUsuario: async (solicitud, respuesta) => {
         try {
             const { username, email, password } = solicitud.body;
-            const hashPassword = await bcrypt.hash(password, 10);
             const newUser = new usersScheme({
                 username: username,
                 email: email,
-                password: hashPassword
+                password: hashPassword,
             });
+            const hashPassword = await bcrypt.hash(password, 10);
+            
             const userCreated = await newUser.save();
             if (userCreated._id) {
                 respuesta.json({
@@ -29,7 +29,7 @@ const ControladorUsuarios = {
 
     leerUsuario: async (solicitud, respuesta) => {
         try {
-            const usuarioEncontrado = await ModeloUsuario.findById(solicitud.params.id)
+            const usuarioEncontrado = await usersScheme.findById(solicitud.params.id)
             if (usuarioEncontrado._id) {
                 respuesta.json({
                     resultado: "Exitoso",
@@ -48,7 +48,7 @@ const ControladorUsuarios = {
 
     leerUsuarios: async (solicitud, respuesta) => {
         try {
-            const todosLosUsuarios = await ModeloUsuario.find();
+            const todosLosUsuarios = await usersScheme.find();
             respuesta.json({
                 resultado: "Exitoso",
                 mensaje: "Todos los usuarios leido con éxito!",
@@ -61,17 +61,19 @@ const ControladorUsuarios = {
         }
     },
 
-    actualizarUsuario: async (solicitud, respuesta) => {
+    updatePassword: async (solicitud, respuesta) => {
         try {
-            const usuarioActualizado = await ModeloUsuario.findByIdAndUpdate(
+            const passwordUpdated = await usersScheme.findByIdAndUpdate(
                 solicitud.params.id, solicitud.body
             );
-            if (usuarioActualizado._id) {
-                console.log("Good!");
+            if (passwordUpdated._id) {
                 respuesta.json({
-                    mensaje: "Datos actualizados, bien!:",
-                    datos: usuarioActualizado._id,
+                    resultado: "Successful",
+                    mensaje: "Datos actualizados en CRUD controller, bien!:",
+                    datos: passwordUpdated._id,
                 });
+            } else {
+                console.log("Boohoo");
             }
         } catch {
             console.log((solicitud.body));
@@ -81,7 +83,7 @@ const ControladorUsuarios = {
 
     eliminarUsuario: async (solicitud, respuesta) => {
         try {
-            const usuarioEliminado = await ModeloUsuario.findByIdAndDelete(solicitud.params.id);
+            const usuarioEliminado = await usersScheme.findByIdAndDelete(solicitud.params.id);
             if (usuarioEliminado._id) {
                 respuesta.json({
                     resultado: "Exitoso",
@@ -91,7 +93,7 @@ const ControladorUsuarios = {
             }
         } catch (error) {
             console.log("Error: ", error);
-            respuesta.json({ error: true, mensaje: "Ocurrió un error al eliminar el usuario" });
+            respuesta.json({ error: true, mensaje: "Error deleting" });
         }
     },
 }

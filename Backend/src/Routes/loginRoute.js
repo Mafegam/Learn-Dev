@@ -5,6 +5,6 @@ const loginRouter = Router();
 
 loginRouter.post('/', loginController.login);
 loginRouter.get('/:token', loginController.validateToken);
-loginRouter.put('/:id', loginController.updateUser);
+loginRouter.put('/:id', loginController.updatePassword);
 
 export default loginRouter;

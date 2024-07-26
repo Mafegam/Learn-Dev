@@ -1,16 +1,14 @@
 import bcryptjs from 'bcryptjs';
 import { generateToken, verifyToken } from "../Tools/functions.js";
-import usersScheme from "../schemes/usersScheme.js";
-import ModeloUsuario from "../schemes/usersScheme.js";
+import esquemaUsuario from '../schemes/usersScheme.js';
 import bcrypt from 'bcryptjs';
 
 const loginController = {
-      
     login: async (solicitud, respuesta) => {
         try {
             const { email, password } = solicitud.body;
             // ESTE METODO ES PARA VERIFICAR QUE EL EMAIL EXISTA EN LA BASE DE DATOS
-            const userFound = await usersScheme.findOne({
+            const userFound = await esquemaUsuario.findOne({
                 email: email,
             });
             // ESTE METODO ES PARA COMPARAR LA CONTRASENA QUE INGRESAR EL USUARIO CON LA QUE 
@@ -74,22 +72,27 @@ const loginController = {
         }
     },
 
-    updateUser: async (solicitud, respuesta) => {
-
+    updatePassword: async (solicitud, respuesta) => {
         try {
-            const usuarioActualizado = await ModeloUsuario.findByIdAndUpdate(
+            const usuarioActualizado = await usersScheme.findByIdAndUpdate(
                 solicitud.params.id, solicitud.body
             );
             if (usuarioActualizado._id) {
-                console.log("Solicitud body", solicitud.body);
+
+                const token = await generateToken({
+                    id: userFound._id,
+                    username: userFound.username,
+                    data: token
+                });
+                console.log("Good!: ");
                 respuesta.json({
-                    mensaje: "Datos actualizados!:",
+                    mensaje: "Datos actualizados, bien!:",
                     datos: usuarioActualizado._id,
                 });
             }
         } catch {
             console.log((solicitud.body));
-            respuesta.json({ error: true, mensaje: "There was an error!" });
+            respuesta.json({ error: true, mensaje: "Error!" });
         }
     },
 }

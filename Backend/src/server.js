@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 
-import usersRouter from "./Routes/usersRoute.js"
+import crudRouter from "./Routes/crudRoute.js" ;
 import loginRouter from "./Routes/loginRoute.js";
 
 const servidor = express();
@@ -12,7 +12,7 @@ servidor.use(morgan("dev"))
 servidor.use(express.json());
 
 // SIGNUP Y WATCH LATER
-servidor.use("/users", usersRouter);
+servidor.use("/users", crudRouter);
 // LOGIN
 servidor.use("/login", loginRouter);
 
