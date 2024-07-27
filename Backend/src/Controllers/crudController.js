@@ -1,11 +1,11 @@
-import usersScheme from "../schemes/usersScheme.js";
+import userScheme from '../Schemes/userScheme';
 import bcrypt from 'bcryptjs';
 
 const ControladorUsuarios = {
     crearUsuario: async (solicitud, respuesta) => {
         try {
             const { username, email, password } = solicitud.body;
-            const newUser = new usersScheme({
+            const newUser = new userScheme({
                 username: username,
                 email: email,
                 password: hashPassword,
@@ -29,7 +29,7 @@ const ControladorUsuarios = {
 
     leerUsuario: async (solicitud, respuesta) => {
         try {
-            const usuarioEncontrado = await usersScheme.findById(solicitud.params.id)
+            const usuarioEncontrado = await userScheme.findById(solicitud.params.id)
             if (usuarioEncontrado._id) {
                 respuesta.json({
                     resultado: "Exitoso",
@@ -48,7 +48,7 @@ const ControladorUsuarios = {
 
     leerUsuarios: async (solicitud, respuesta) => {
         try {
-            const todosLosUsuarios = await usersScheme.find();
+            const todosLosUsuarios = await userScheme.find();
             respuesta.json({
                 resultado: "Exitoso",
                 mensaje: "Todos los usuarios leido con éxito!",
@@ -63,7 +63,7 @@ const ControladorUsuarios = {
 
     updatePassword: async (solicitud, respuesta) => {
         try {
-            const passwordUpdated = await usersScheme.findByIdAndUpdate(
+            const passwordUpdated = await userScheme.findByIdAndUpdate(
                 solicitud.params.id, solicitud.body
             );
             if (passwordUpdated._id) {
@@ -83,7 +83,7 @@ const ControladorUsuarios = {
 
     eliminarUsuario: async (solicitud, respuesta) => {
         try {
-            const usuarioEliminado = await usersScheme.findByIdAndDelete(solicitud.params.id);
+            const usuarioEliminado = await userScheme.findByIdAndDelete(solicitud.params.id);
             if (usuarioEliminado._id) {
                 respuesta.json({
                     resultado: "Exitoso",

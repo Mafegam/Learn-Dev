@@ -1,6 +1,6 @@
 import bcryptjs from 'bcryptjs';
 import { generateToken, verifyToken } from "../Tools/functions.js";
-import usersScheme from '../schemes/usersScheme.js';
+import userScheme from '../schemes/userScheme.js';
 import bcrypt from 'bcryptjs';
 
 const loginController = {
@@ -8,7 +8,7 @@ const loginController = {
         try {
             const { email, password } = solicitud.body;
             // ESTE METODO ES PARA VERIFICAR QUE EL EMAIL EXISTA EN LA BASE DE DATOS
-            const userFound = await usersScheme.findOne({
+            const userFound = await userScheme.findOne({
                 email: email,
             });
             // ESTE METODO ES PARA COMPARAR LA CONTRASENA QUE INGRESAR EL USUARIO CON LA QUE 
@@ -74,7 +74,7 @@ const loginController = {
 
     updatePassword: async (solicitud, respuesta) => {
         try {
-            const usuarioActualizado = await usersScheme.findByIdAndUpdate(
+            const usuarioActualizado = await userScheme.findByIdAndUpdate(
                 solicitud.params.id, solicitud.body
             );
             if (usuarioActualizado._id) {
