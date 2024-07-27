@@ -56,7 +56,7 @@ export class BodyComponent {
         if (respuesta.resultado === 'Exitoso') {
           this.toastrService.success("Account deleted");
           this.loginService.logout();
-          this.router.navigateByUrl("/")
+          this.router.navigateByUrl("/introduction")
           
         } else {
           this.toastrService.error('An error ocurred');

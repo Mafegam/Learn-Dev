@@ -49,7 +49,7 @@ export class ProfileBarComponent {
   }
 
   handleDelete(userID: string) {
-    const decision = confirm("Want to delete?")
+    const decision = confirm("Click ACCEPT to confirm")
 
     if (decision) {
       this.loginService.deleteUser(userID).subscribe((respuesta: any) => {
@@ -64,7 +64,7 @@ export class ProfileBarComponent {
         }
       });
     } else {
-      alert("Bye!")
+      
     }
   }
 

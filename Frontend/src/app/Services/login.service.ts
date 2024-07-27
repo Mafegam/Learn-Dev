@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor() { }
   httpClient = inject(HttpClient);
-  API_URL = "http://localhost:3000";
+  API_URL = "http://3.14.1.48:3000";
   router = inject(Router);
 
   // MANEJA EL INICIO DE SESION

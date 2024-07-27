@@ -41,7 +41,7 @@
  }
 
  .signUp-btn {
-     color: #7ad3ff;
+     color: #ffffff;
      font-weight: 500;
      background: #38bff856;
  }
@@ -80,7 +80,7 @@
          display: flex;
      }
 
-     .topIconFull {
+     .topIconFull, .aboutMe {
          display: none;
 
      }
@@ -93,7 +93,7 @@
 
  }
 
- @media (max-width: 930px) {
+ @media (max-width: 1030px) {
      .navContainer {
          margin: auto;
      }

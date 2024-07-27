@@ -10,15 +10,18 @@ import { HtmlElementsComponent } from './Components/content/html-elements/html-e
 import { FormattingComponent } from './Components/content/formatting/formatting.component';
 import { CssBasicsComponent } from './Components/content/css/css-basics/css-basics.component';
 import { CssSelectorsComponent } from './Components/content/css/css-selectors/css-selectors.component';
-import { LandingPageComponent } from './Components/landing-page/landing-page.component';
 import { AboutMeComponent } from './Components/about-me/about-me.component';
+import { IntroductionComponent } from './Components/home/introduction/introduction.component';
 
 import { DownloadResourcesComponent } from './Components/download-resources/download-resources.component';
-import { CarousselComponent } from './Components/caroussel/caroussel.component';
 
 export const routes: Routes = [
-    { path: 'landingPage', title: "Welcome to Dev Learn", component: LandingPageComponent },
-    { path: 'home', title: "Home", component: HomeComponent },
+    {
+        path: 'home',
+        title: "Home",
+        component: HomeComponent,
+        canActivate: [activateGuard]
+    },
     {
         path: 'private',
         title: "Private",
@@ -27,18 +30,18 @@ export const routes: Routes = [
     },
     { path: 'login', title: "Login", component: LoginComponent },
     { path: 'signup', title: "Sign Up", component: SignUpComponent },
-    { path: 'caroussel', title: "Practical Resources", component: CarousselComponent },
     { path: 'additionalResources', title: "Additional Resources", component: DownloadResourcesComponent },
+    { path: 'introduction', title: "Introduction", component: IntroductionComponent },
     { path: 'about', title: "About Me", component: AboutMeComponent },
 
 
-    { path: 'htmlBasics', title: "HTML Basics ", component: htmlBasicsComponent },
-    { path: 'htmlElements', title: "HTML Elements", component: HtmlElementsComponent },
-    { path: 'htmlFormatting', title: "HTML Formatting", component: FormattingComponent },
-    { path: 'cssBasics', title: "CSS Basics", component: CssBasicsComponent },
-    { path: 'cssSelectors', title: "CSS Selectors", component: CssSelectorsComponent },
+    { path: 'htmlBasics', title: "HTML Basics ", component: htmlBasicsComponent, canActivate: [activateGuard] },
+    { path: 'htmlElements', title: "HTML Elements", component: HtmlElementsComponent, canActivate: [activateGuard] },
+    { path: 'htmlFormatting', title: "HTML Formatting", component: FormattingComponent, canActivate: [activateGuard] },
+    { path: 'cssBasics', title: "CSS Basics", component: CssBasicsComponent, canActivate: [activateGuard] },
+    { path: 'cssSelectors', title: "CSS Selectors", component: CssSelectorsComponent, canActivate: [activateGuard] },
 
-    { path: '', redirectTo: "home", pathMatch: "full" },
+    { path: '', redirectTo: "introduction", pathMatch: "full" },
     { path: '**', title: "404 Page Not Found", component: PageNotFoundComponent }
 
 ];

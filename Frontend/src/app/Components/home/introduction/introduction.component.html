@@ -1,107 +1,124 @@
-<div class="wrapper lg:pl-[20.5rem] max-sm:px-7 ">
+<div class="bg">
+    <div class="navbar">
+        <app-navbar></app-navbar>
+      </div>
+    
 
-    <div
-        class="mx-auto my-50 format xl:max-w-5xl lg:max-w-5xl format-sm sm:format-base lg:format-lg grid gap-10 md:grid-cols-2 p-4 md:p-2 xl:p-5">
-        <!-- CONTAINER 1 -->
-        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-            <h2 class="text-gray-900 dark:text-white text-4xl font-extrabold mb-2">STEP 1: HTML</h2>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Create, defineand structure the content
-                of your website by using tags and attributes like headings, paragraphs, links, images, and more..</p>
-            <button routerLink="/htmlBasics"
-                class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
-                more
-                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </button>
-        </div>
+    <app-hero></app-hero>
 
+    <div class="wrapper max-sm:px-7 ">
 
+        <h2 class="text-4xl font-bold tracking-tight text-whi sm:text-6xl">NOT SURE WHERE TO START?</h2>
 
-
-        <!-- CONTAINER 2 -->
         <div
-            class="titleWrapper bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 ">
-            <pre class="snippet "><code class="language-html text-black backdrop-saturate-125">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;HTML&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt; Hey! I'm HTML! &lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-
-        </div>
-
-        <!-- CONTAINER 3 -->
-        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg  md:p-12">
-            <pre class="snippet"><code class="language-html text-black">p&#123;
-color: blue;
-&#125;
-
-button&#123;
-background-color: red;
-&#125;
-
-.navBar&#123;
-border: 1px solid yellow;
-&#125;
-</code></pre>
-        </div>
-
-        <!-- CONTAINER 4 -->
-        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-
-            <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">STEP 2: CSS</h2>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Style and give and control the layout
-                of your site. It allows the control how HTML elements are displayed on the screen, including aspects
-                like colors, fonts, and spacing.</p>
+            class="mx-auto my-50 format xl:max-w-5xl lg:max-w-5xl format-sm sm:format-base lg:format-lg grid gap-10 md:grid-cols-1 lg:grid-cols-2 p-4 md:p-2 xl:p-5">
+            <!-- CONTAINER 1 -->
+             
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                <h2 class="text-gray-900 dark:text-white text-4xl font-extrabold mb-2">STEP 1: HTML</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Create, defineand structure the content
+                    of your website by using tags and attributes like headings, paragraphs, links, images, and more..</p>
+                <button routerLink="/htmlBasics"
+                    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
+                    more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </button>
+            </div>
+    
+    
+    
+    
+            <!-- CONTAINER 2 -->
+            <div
+                class="titleWrapper bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 ">
+                <pre class="snippet "><code class="language-html text-black backdrop-saturate-125">&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;HTML&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt; Hey! I'm HTML! &lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+    
+    
+            </div>
+    
+            <!-- CONTAINER 3 -->
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+    
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">STEP 2: CSS</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Style and give and control the layout
+                    of your site. It allows the control how HTML elements are displayed on the screen, including aspects
+                    like colors, fonts, and spacing.</p>
                 <button routerLink="/cssBasics"
-                class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
-                more
-                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </button>
+                    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
+                    more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </button>
+            </div>
+    
+            <!-- CONTAINER 4 -->
+            
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg  md:p-12">
+                <pre class="snippet"><code class="language-html text-black">p&#123;
+    color: blue;
+    &#125;
+    
+    button&#123;
+    background-color: red;
+    &#125;
+    
+    .navBar&#123;
+    border: 1px solid yellow;
+    &#125;
+    </code></pre>
+            </div>
+            <!-- CONTAINER 5 -->
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">STEP 3: JavaScript</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Make your website and its content
+                    interactive. Create dynamic elements on your website, add behavior to HTML and CSS, making web pages
+                    more engaging by allowing for actions like user input, animations, and dynamic content updates.</p>
+                <button href="#"
+                    class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
+                    more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </button>
+            </div>
+    
+            <!-- CONTAINER 6 -->
+            <div
+                class="titleWrapper bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 ">
+                <pre class="snippet "><code class="language-html text-black backdrop-saturate-125">const greeting = "Hello World!"
+    console.log(greeting);
+    
+    function myFunction() &#123;
+    document.getElementById("demo").innerHTML = "Hello World";
+    &#125;
+    
+    </code></pre>
+    
+    
+            </div>
+    <br>
+    <br>
         </div>
-
-        <!-- CONTAINER 5 -->
-        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-            <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">STEP 3: JavaScript</h2>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Make your website and its content
-                interactive. Create dynamic elements on your website, add behavior to HTML and CSS, making web pages
-                more engaging by allowing for actions like user input, animations, and dynamic content updates.</p>
-            <button href="#"
-                class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read
-                more
-                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- CONTAINER 6 -->
-        <div
-            class="titleWrapper bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 ">
-            <pre class="snippet "><code class="language-html text-black backdrop-saturate-125">const greeting = "Hello World!"
-console.log(greeting);
-
-function myFunction() &#123;
-document.getElementById("demo").innerHTML = "Hello World";
-&#125;
-
-</code></pre>
-
-
-        </div>
-
     </div>
+    <app-footer></app-footer>
 </div>
+
+
+

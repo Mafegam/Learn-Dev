@@ -84,7 +84,7 @@ import "./databaseConnection.js";
 import servidor from "./server.js";
 
 // Set the server in port 3000
-servidor.listen(3000, ()=>{
+servidor.listen(3.14.1.48:3000, ()=>{
     console.log("Server runs inport 3000!");
 });
 ```

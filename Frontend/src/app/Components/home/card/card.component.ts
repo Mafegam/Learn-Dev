@@ -26,7 +26,7 @@ export class CardComponent {
   $element1 = document.getElementById('element1')
   $emptyField: HTMLElement | null = document.getElementById('emptyField');
   userID: string = "";
-  API_URL = "http://localhost:3000";
+  API_URL = "http://3.14.1.48:3000";
 
   isLogedIn() {
     if (localStorage.getItem('token')) {

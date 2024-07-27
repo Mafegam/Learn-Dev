@@ -13,3 +13,11 @@
 .text-xl, .text-sm{
     color: white;
 }
+
+.toast-warning{
+    color: rgb(123, 138, 138);
+}
+
+#toast-container{
+    color: aqua;
+}
