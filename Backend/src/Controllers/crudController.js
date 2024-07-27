@@ -1,4 +1,4 @@
-import userScheme from '../Schemes/userScheme';
+import userScheme from '../Schemes/userScheme.js';
 import bcrypt from 'bcryptjs';
 
 const ControladorUsuarios = {

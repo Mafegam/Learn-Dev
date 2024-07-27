@@ -1,7 +1,9 @@
 import bcryptjs from 'bcryptjs';
 import { generateToken, verifyToken } from "../Tools/functions.js";
-import userScheme from '../schemes/userScheme.js';
+import userScheme from '../Schemes/userScheme.js';
+
 import bcrypt from 'bcryptjs';
+
 
 const loginController = {
     login: async (solicitud, respuesta) => {
