@@ -23,8 +23,6 @@ export class WatchLaterService {
     return this.httpClient.get(this.API_URL + "/watchLater")
   }
 
-
-
   removeTutorial(tutorialID: string) {
     return this.httpClient.delete(`${this.API_URL}/watchLater/${tutorialID}`)
   }

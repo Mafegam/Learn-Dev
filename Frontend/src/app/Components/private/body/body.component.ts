@@ -21,7 +21,6 @@ import { Credentials } from '../../../Interfaces/credentials';
 })
 export class BodyComponent {
   loginService = inject(LoginService)
-  watchLaterService = inject(WatchLaterService)
   username: string = "";
   router = inject(Router);
   user: any[] = [];
@@ -29,27 +28,7 @@ export class BodyComponent {
   userID: string = "";
   retrievedEmail: string = "";
 
-  retrievedList: any[] = [];
-
-  tutorialID: string = ""
-
-  retrieveList() {
-    this.watchLaterService.retrieveList().subscribe((respuesta: any) => {
-      console.log("Respuesta de retrieve list:", respuesta);
-      if (respuesta) {
-        this.retrievedList = respuesta.datos
-      } else {
-        console.log("Errpr 404, no hay respuesta");
-      }
-    })
-  }
-
-
   ngOnInit() {
-    // WATCH LATER LIST
-    this.retrieveList();
-    // TUTORIAL IDs
-    
     // VALIDATE USER TOKEN
     const token: any = localStorage.getItem("token")
     if (token) {
