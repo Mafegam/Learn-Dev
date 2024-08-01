@@ -3,7 +3,7 @@
   <div
     class="mx-auto my-50 format xl:max-w-5xl lg:max-w-5xl format-sm sm:format-base lg:format-lg grid gap-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 md:grid-gap-5 p-4 md:p-2 xl:p-5">
 
-
+    <!-- BASICS HTML -->
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
       <button routerLink="/htmlBasics">
         <img class="rounded-t-lg"
@@ -16,14 +16,16 @@
         <p class="mb-4 ">
           Dive into the foundations of HTML
         </p>
-        <!-- @if(isLogedIn()){
-        <button id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')" onClick="this.disabled=true;"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('HTML Basics', '/htmlBasics', true)" onClick="this.disabled=true;"
           type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
-        }@else {
+        }
+        <!-- SE DESAPARECE CUANDO NO SE ESTÁ LOGEADO -->
+        <!-- @else {
         <button style="display:none" id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')"
           onClick="this.disabled=true;" type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
@@ -34,6 +36,7 @@
       </div>
     </div>
 
+    <!-- CSS SELECTORS -->
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
       <button routerLink="/cssSelectors">
         <img class="rounded-t-lg"
@@ -46,24 +49,18 @@
         <p class="mb-4 ">
           Find out about how CSS selectors work
         </p>
-        <!-- @if(isLogedIn()){
-        <button id="element1" (click)="addToList('/cssSelectors', 'CSS Selectors')" onClick="this.disabled=true;"
+
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('CSS Selectors', '/cssSelectors', true)" onClick="this.disabled=true;"
           type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
-        }@else {
-        <button style="display:none" id="element1" (click)="addToList('/cssSelectors', 'CSS Selectors')"
-          onClick="this.disabled=true;" type="button"
-          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-          data-twe-ripple-init data-twe-ripple-color="light">
-          Read Later
-        </button>
-        } -->
+        }
       </div>
     </div>
-
+    <!-- JAVASCRIPT BASICS -->
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
       <button routerLink="/jsBasics">
         <img class="rounded-t-lg"
@@ -76,24 +73,17 @@
         <p class="mb-4 ">
           Learn the basics of Java Script
         </p>
-        <!-- @if(isLogedIn()){
-        <button id="element1" (click)="addToList('/jsBasics', 'JavaScript Basics')" onClick="this.disabled=true;"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('JavaScript Basics', '/jsBasics', true)" onClick="this.disabled=true;"
           type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
-        }@else {
-        <button style="display:none" id="element1" (click)="addToList('/jsBasics', 'JavaScript Basics')"
-          onClick="this.disabled=true;" type="button"
-          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-          data-twe-ripple-init data-twe-ripple-color="light">
-          Read Later
-        </button>
-        } -->
+        }
       </div>
     </div>
-
+    <!-- HTML FORMAT -->
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
       <button routerLink="/htmlBasics">
         <img class="rounded-t-lg" src="https://i.insider.com/6019ac40ee136f00183a9de1?width=700" alt="" />
@@ -104,24 +94,17 @@
         <p class="mb-4 ">
           Discover how to format your HTML code
         </p>
-        <!-- @if(isLogedIn()){
-        <button id="element1" (click)="addToList('/htmlFormatting', 'HTML Formatting')" onClick="this.disabled=true;"
-          type="button"
-          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-          data-twe-ripple-init data-twe-ripple-color="light">
-          Read Later
-        </button>
-        }@else {
-        <button style="display:none" id="element1" (click)="addToList('/htmlFormatting', 'HTML Formatting')"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('HTML Formatting', '/htmlFormatting', true)"
           onClick="this.disabled=true;" type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
-        } -->
+        }
       </div>
     </div>
-
+    <!-- CSS BASICS -->
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
       <button routerLink="/htmlBasics">
         <img class="rounded-t-lg" src="https://www.webempresa.com/wp-content/uploads/2024/01/que-es-css-01.jpg"
@@ -133,24 +116,17 @@
         <p class="mb-4 ">
           Get started with CSS basics
         </p>
-        <!-- @if(isLogedIn()){
-        <button id="element1" (click)="addToList('/cssBasics', 'CSS Basics')" onClick="this.disabled=true;"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('CSS Basics', '/cssBasics', true)" onClick="this.disabled=true;"
           type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
-        }@else {
-        <button style="display:none" id="element1" (click)="addToList('/cssBasics', 'CSS Basics')"
-          onClick="this.disabled=true;" type="button"
-          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-          data-twe-ripple-init data-twe-ripple-color="light">
-          Read Later
-        </button>
-        } -->
+        }
       </div>
     </div>
-
+    <!-- JS VARIABLES -->
     <div class="block rounded-lg  shadow-secondary-1 dark:bg-surface-dark">
       <button routerLink="/htmlBasics">
         <img class="rounded-t-lg" src="https://img.europapress.es/fotoweb/fotonoticia_20210430172721_1200.jpg" alt="" />
@@ -160,26 +136,17 @@
           Variables </button>
         <p class="mb-4 ">
           Learn about one of the pillars of JS; variables </p>
-        <!-- @if(isLogedIn()){
-        <button id="element1" (click)="addToList('/jsVariables', 'JS Variables')" onClick="this.disabled=true;"
+        @if(isLogedIn()){
+        <button id="element1" (click)="addToList('JS Variables', '/jsVariables', true)" onClick="this.disabled=true;"
           type="button"
           class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           data-twe-ripple-init data-twe-ripple-color="light">
           Read Later
         </button>
-        }@else {
-        <button style="display:none" id="element1" (click)="addToList('/htmlBasics', 'HTML Basics')"
-          onClick="this.disabled=true;" type="button"
-          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-          data-twe-ripple-init data-twe-ripple-color="light">
-          Read Later
-        </button>
-        } -->
+        }
       </div>
     </div>
   </div>
-
-
 </div>
 
 <!-- <app-body></app-body> -->

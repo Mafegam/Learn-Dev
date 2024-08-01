@@ -34,11 +34,13 @@ export class DogsFactsComponent {
     // DOG IMAGE
     this.dogsService.getImage().subscribe((response: any) => {
       this.imageURL = response.message;
+      console.log(response);
     })
 
     // DOG FACT
     this.dogsService.getFact().subscribe((response: any) => {
       this.dogFact = response.data[0].attributes.body;
+      console.log(response);
     })
   }
 

@@ -1,12 +1,16 @@
-.wrapper{
+.wrapper {
     margin-top: 50px;
-visibility: hidden;}
-.w-full{
+    visibility: hidden;
+}
+
+.w-full {
     background-color: inherit;
 }
-.text-sm{
+
+.text-sm {
     color: #f5ebebc7;
 }
-ul li{
+
+ul li {
     list-style: none;
 }

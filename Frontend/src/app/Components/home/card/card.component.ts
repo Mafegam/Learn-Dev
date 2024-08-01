@@ -8,6 +8,9 @@ import { NgFor } from '@angular/common';
 import { LoginService } from '../../../Services/login.service';
 import { BodyComponent } from '../../private/body/body.component';
 
+import { WatchLaterService } from '../../../Services/watch-later.service';
+import { Title } from '@angular/platform-browser';
+
 initTWE({ Ripple });
 
 @Component({
@@ -19,14 +22,15 @@ initTWE({ Ripple });
 })
 export class CardComponent {
   loginService = inject(LoginService);
+  watchLaterService = inject(WatchLaterService);
   toastrService = inject(ToastrService);
   httpClient = inject(HttpClient);
 
-  // watchLaterList: any[] = [];
+  watchLaterList: any[] = [];
+
   $element1 = document.getElementById('element1')
   $emptyField: HTMLElement | null = document.getElementById('emptyField');
   userID: string = "";
-  API_URL = "http://3.14.1.48:3000";
 
   isLogedIn() {
     if (localStorage.getItem('token')) {
@@ -51,23 +55,24 @@ export class CardComponent {
     }
   }
 
-  // addToList(link: string, title: string) {
-  //   console.log(this.userID);
-  //   this.watchLaterList.push({ link, title });
-  //   console.log(this.watchLaterList);
-  //   this.toastrService.success("Added to your list")
+  addToList(title: string, link: string, status: boolean) {
 
-  //   const payload = {watchLaterList: [this.watchLaterList]};
-  //   console.log("Payload: " ,payload);
+    const list = { title, link, status }
+    this.watchLaterList.push(list);
+    this.toastrService.success("Added to your list")
 
-  //   this.httpClient.put(`http://localhost:3000/users/${this.userID}`, payload).subscribe((respuesta: any) => {
-  //     console.log("Respuesta: ", respuesta);
-  //   });
+    // const myJSON = JSON.stringify(list);
+    // console.log(myJSON);
 
-  // };
+    // const tutorialAdded = {watchLaterList: this.watchLaterList};
+    const tutorialAdded = this.watchLaterList;
+    console.log("Payload: ", tutorialAdded);
+
+    this.watchLaterService.addToList(list).subscribe((respuesta: any) => {
+      console.log(respuesta);
+    })
+  }
 }
-
-
 
 
 
