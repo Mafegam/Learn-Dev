@@ -19,7 +19,7 @@ import { DownloadResourcesComponent } from './Components/download-resources/down
 import { CatsFactsComponent } from './Components/APIs/cats-facts/cats-facts.component';
 import { DogsFactsComponent } from './Components/APIs/dogs-facts/dogs-facts.component';
 
-import { BodyComponent } from './Components/private/body/body.component';
+import { ThanksComponent } from './Components/thanks/thanks.component';
 
 export const routes: Routes = [
     {
@@ -49,7 +49,7 @@ export const routes: Routes = [
 
     { path: 'dogsFacts', title: "Dogs Facts", component: DogsFactsComponent, canActivate: [activateGuard] },
     { path: 'catsFacts', title: "Cats Facts", component: CatsFactsComponent, canActivate: [activateGuard] },
-    { path: 'body', title: "Cats Facts", component: BodyComponent, canActivate: [activateGuard] },
+    { path: 'thanks', title: "Thanks", component: ThanksComponent, canActivate: [activateGuard] },
 
     { path: '', redirectTo: "introduction", pathMatch: "full" },
     { path: '**', title: "404 Page Not Found", component: PageNotFoundComponent },

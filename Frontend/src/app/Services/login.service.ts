@@ -15,11 +15,11 @@ export class LoginService {
   API_URL = "http://localhost:3000";
   router = inject(Router);
 
-  // MANEJA EL INICIO DE SESION
+  // INICIO DE SESION
   login(credentials: Credentials) {
     return this.httpClient.post(this.API_URL + "/login", credentials);
   }
-  // MANEJA LA CRECION DE USUARIO
+  // CRECION DE USUARIO
   signup(signUpCredentials: SignUpCredentials) {
     return this.httpClient.post(this.API_URL + "/users", signUpCredentials);
   }
@@ -30,9 +30,8 @@ export class LoginService {
   // ACTUALIZA EL PASSWORD
   updatePassword(credentials: Credentials, userID: string){
     return this.httpClient.put(`${this.API_URL}/users/${userID}`, credentials);
-
   }
-  // VERIFICA QUE EL USUARIO ESTE LOGUEADO
+  // ESTA LOGUEADO
   isLogedIn() {
     if (localStorage.getItem('token')) {
       return true;
@@ -45,9 +44,11 @@ export class LoginService {
     return this.httpClient.delete(`${this.API_URL}/users/${userID}`);
   }
 
-  // PARA CERRAR SESION
+  // CERRAR SESION
   logout() {
     localStorage.removeItem("token");
     this.router.navigate(["/"])
   }
+
+  
 }

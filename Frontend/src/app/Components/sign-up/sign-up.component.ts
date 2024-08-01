@@ -24,7 +24,6 @@ export class SignUpComponent {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
-    // watchLaterList: new FormControl('')
   });
 
   handleSubmit() {
@@ -34,7 +33,6 @@ export class SignUpComponent {
       const password = this.newCredentials.value.password;
       const confirmPassword = this.newCredentials.value.confirmPassword;
       const email = this.newCredentials.value.email;
-      // const watchLaterList = undefined;
 
       if (typeof username === "string" && typeof email === "string" && typeof password === "string" && typeof confirmPassword === "string" /*&& typeof watchLaterList == "undefined"*/) {
         if (password === confirmPassword) {
@@ -43,13 +41,12 @@ export class SignUpComponent {
             password: password,
             confirmPassword: confirmPassword,
             email: email,
-            // watchLaterList: '',
           };
           console.log("Datos recibidos: ", signUpCredentials);
           this.loginService.signup(signUpCredentials).subscribe((respuesta: any) => {
             if (signUpCredentials != null) {
               console.log("Success!");
-              this.router.navigateByUrl("/private")
+              this.router.navigateByUrl("/profile")
               this.toastrService.success("User created. Please Sign In!")
             } else {
               this.toastrService.error("User no creado")

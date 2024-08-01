@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -26,13 +26,14 @@ export class WatchLaterService {
   removeTutorial(tutorialID: string) {
     return this.httpClient.delete(`${this.API_URL}/watchLater/${tutorialID}`)
   }
+
+  removeAllTutorials(allTutorials: any){
+    return this.httpClient.delete(this.API_URL + "/watchLater")  
+  }
+
+  alreadyAdded($link: string): Observable<boolean> {
+    return this.httpClient.get<boolean>(`${this.API_URL}/watchLater/${$link}`);
+  }
 }
 
-// addToList(tutorialAdded: any[]): Observable<any[]> {
-//   const requests = tutorialAdded.map(element =>
-//     this.httpClient.post(this.API_URL + '/watchLater', element)
-//   );
 
-//   return forkJoin(requests);
-
-// }

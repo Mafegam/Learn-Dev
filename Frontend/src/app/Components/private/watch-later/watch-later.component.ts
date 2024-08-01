@@ -19,13 +19,11 @@ export class WatchLaterComponent {
 
   retrieveList() {
     this.watchLaterService.retrieveList().subscribe((respuesta: any) => {
-      console.log("Respuesta de retrieve list:", respuesta);
       if (respuesta) {
-        console.log("Hay respuesta");
         this.retrievedList = respuesta.datos
         this.tutorialID = respuesta.datos._id
       } else {
-        console.log("Errpr 404, no hay respuesta");
+        console.log(Error);
       }
     })
   }
@@ -34,7 +32,6 @@ export class WatchLaterComponent {
     
     this.watchLaterService.removeTutorial(tutorialID).subscribe((respuesta: any) => {
       if (respuesta) {
-        console.log("Tutorial: ", tutorialID);
         this.ngOnInit();
       } else {
         console.log("Error eliminando tutorial");
@@ -42,8 +39,17 @@ export class WatchLaterComponent {
     })
   }
 
+  removeAll(retrievedList: any) {
+    this.watchLaterService.removeAllTutorials(retrievedList).subscribe((respuesta: any) => {
+      if (respuesta) {
+        this.ngOnInit();
+      } else {
+        console.log("Error eliminando todos");
+      }
+    })
+  }
+
   ngOnInit(){
     this.retrieveList();
-    console.log("Tut id", this.tutorialID);
   }
 }

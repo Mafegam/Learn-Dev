@@ -27,9 +27,6 @@ export class CardComponent {
   httpClient = inject(HttpClient);
 
   watchLaterList: any[] = [];
-
-  $element1 = document.getElementById('element1')
-  $emptyField: HTMLElement | null = document.getElementById('emptyField');
   userID: string = "";
 
   isLogedIn() {
@@ -55,21 +52,32 @@ export class CardComponent {
     }
   }
 
-  addToList(title: string, link: string, status: boolean) {
+  // addToList(title: string, link: string, status: boolean) {
+  //   const list = { title, link, status }
+  //   const $link = link
 
+
+  //   this.watchLaterService.alreadyAdded($link).subscribe((exists) => {
+  //     if (exists) {
+  //       console.log("Already added");
+  //     } else {
+  //       this.toastrService.success("Added to your list")
+
+  //       this.watchLaterService.addToList(list).subscribe(() => {
+  //         console.log();
+  //       })
+  //     }
+  //   })
+
+
+  // }
+
+  addToList(title: string, link: string, status: boolean) {
     const list = { title, link, status }
-    this.watchLaterList.push(list);
     this.toastrService.success("Added to your list")
 
-    // const myJSON = JSON.stringify(list);
-    // console.log(myJSON);
-
-    // const tutorialAdded = {watchLaterList: this.watchLaterList};
-    const tutorialAdded = this.watchLaterList;
-    console.log("Payload: ", tutorialAdded);
-
-    this.watchLaterService.addToList(list).subscribe((respuesta: any) => {
-      console.log(respuesta);
+    this.watchLaterService.addToList(list).subscribe(() => {
+      console.log();
     })
   }
 }
