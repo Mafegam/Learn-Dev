@@ -20,12 +20,42 @@
 
  }
 
+ .listWrapper {
+     background-color: #2e335a;
+     padding: 10px;
+     border-radius: 0 0 10px 10px;
+     margin-top: 15px;
+     width: 210px;
+ }
+
+ .itemTitle {
+    font-family: "Poppins", sans-serif;
+     color: white;
+     margin-top: 5px;
+ }
+
+ .delete-btn{
+    fill: #e6e6e6;
+    transition: 0.4s;
+ }
+
+ .delete-btn:hover{
+    fill: #5e5b5b;
+ }
+
  .divider {
      height: 2px;
      background-color: #2e335a;
      width: 100%;
      margin: 0 auto;
      background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.1, #2e335a), color-stop(0.5, #6a1fcc), color-stop(0.98, #2e335a));
+ }
+
+ .divider2 {
+     height: 2px;
+     width: 100%;
+     margin-top: 5px;
+     background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, #2e335a), color-stop(0.5, #868686), color-stop(0.98, #2e335a));
  }
 
  .text-white,
@@ -60,7 +90,7 @@
      }
  }
 
- @media (max-width: 550px) {
+ @media (max-width: 592px) {
 
      button {
          font-size: 3.1vw;
@@ -73,14 +103,19 @@
      .flex {
          gap: 10px;
      }
+
+     .dropdown {
+         display: none;
+     }
  }
 
- @media (max-width: 640px) {
+ @media (max-width: 675px) {
      .flex {
          display: flex;
      }
 
-     .topIconFull, .aboutMe {
+     .topIconFull,
+     .aboutMe {
          display: none;
 
      }
@@ -93,7 +128,7 @@
 
  }
 
- @media (max-width: 1030px) {
+ @media (max-width: 1080px) {
      .navContainer {
          margin: auto;
      }

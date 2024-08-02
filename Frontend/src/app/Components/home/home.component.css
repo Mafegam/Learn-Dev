@@ -1,31 +1,24 @@
 .navbar {
     position: sticky;
+    background-color: inherit;
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
 }
 
 .bg {
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
-    background-image: radial-gradient(18% 28% at 18% 71%, #20199259 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, rgb(16, 6, 51) 0%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, rgb(12, 25, 45) 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #290f29 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #0f1729 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #0f1729 24%, #073AFF00 100%), linear-gradient(125deg, #0f1729 1%, rgb(48, 7, 145) 100%);
-    height: 100%;
-    width: 100%;
+    background-image: radial-gradient(18% 28% at 18% 71%, #20199259 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, #0F454CFF 0%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, #0C2D28FF 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #0f1729 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #0f1729 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #0f1729 24%, #073AFF00 100%), linear-gradient(125deg, #0f1729 1%, rgb(48, 7, 145) 100%);
     z-index: -1;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .footer {
     background-color: inherit;
     position: fixed;
-}
-
-.heroWrapper{
-    max-height: 500px;
-}
-.relative{
-    padding-top: 0;
-    margin-top: 0;
 }
 
 h1,
@@ -37,10 +30,6 @@ h6 {
     color: #E2e8f0;
 }
 
-kbd, b {
-    color: #7DD3FC;
-}
-
 p,
 li,
 strong {
@@ -49,22 +38,6 @@ strong {
 
 .text-4xl{
     color: white;
-}
-
-.wrapper {
-    margin-top: 25px;
-    margin-bottom: 50px;
-}
-
-.snippet {
-    background-color: #1e293bb0;
-    border-width: 1px;
-    border-color: rgb(80, 80, 90);
-    ;
-}
-
-.card{
-    z-index: 9999999;
 }
 
 @media (max-width: 639px) {
