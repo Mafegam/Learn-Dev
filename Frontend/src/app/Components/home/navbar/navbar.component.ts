@@ -21,6 +21,7 @@ export class NavbarComponent {
 
   retrievedList: any[] = [];
   numberOfItems: number = 0
+  allTutorials: any[] = [this.retrievedList]
 
   retrieveList() {
     this.watchLaterService.retrieveList().subscribe((respuesta: any) => {
@@ -41,6 +42,16 @@ export class NavbarComponent {
         this.ngOnInit();
       } else {
         console.log("Error eliminando tutorial");
+      }
+    })
+  }
+
+  removeAllTutorials(allTutorials: any) {
+    this.watchLaterService.removeAllTutorials(allTutorials).subscribe((respuesta: any) => {
+      if (respuesta) {
+        this.ngOnInit();
+      } else {
+        console.log("Error eliminando los tutoriales");
       }
     })
   }

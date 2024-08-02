@@ -58,6 +58,14 @@
      background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, #2e335a), color-stop(0.5, #868686), color-stop(0.98, #2e335a));
  }
 
+ .clear-btn{
+    text-align: center;
+    transition: 0.4s;
+ }
+ .clear-btn:hover{
+    color: rgb(230, 230, 230);
+ }
+
  .text-white,
  .signUp-btn {
      letter-spacing: 1.5px;
