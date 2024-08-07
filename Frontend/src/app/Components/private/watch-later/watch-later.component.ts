@@ -3,10 +3,19 @@ import { WatchLaterService } from '../../../Services/watch-later.service';
 import { inject } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {
+  CdkDrag,
+  CdkDragDrop,
+  CdkDragPlaceholder,
+  CdkDropList,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-watch-later',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CdkDropList, CdkDrag, CdkDragPlaceholder],
   templateUrl: './watch-later.component.html',
   styleUrl: './watch-later.component.css'
 })
@@ -29,7 +38,7 @@ export class WatchLaterComponent {
   }
 
   removeTutorial(tutorialID: string) {
-    
+
     this.watchLaterService.removeTutorial(tutorialID).subscribe((respuesta: any) => {
       if (respuesta) {
         this.ngOnInit();
@@ -49,7 +58,11 @@ export class WatchLaterComponent {
     })
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.retrieveList();
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.retrievedList, event.previousIndex, event.currentIndex);
   }
 }

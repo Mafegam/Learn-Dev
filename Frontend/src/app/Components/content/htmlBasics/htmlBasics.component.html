@@ -4,29 +4,47 @@
     </div>
 
     <div>
-    <div class="sidebar">
-        <app-sidebar></app-sidebar>
-    </div>
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
 
 
-    <div class="bodyContent">
-        <div class="htmlBasics">
-            <div class="wrapper lg:pl-[15.5rem] max-sm:px-7">
-                <article
-                    class="mx-auto my-50 format xl:max-w-3xl format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                    <header class="mb-4 mt-50 lg:mb-6 not-format">
+        <div class="bodyContent">
+            <div class="htmlBasics">
+                <div class="wrapper lg:pl-[15.5rem] max-sm:px-7">
+                    <article
+                        class="mx-auto my-50 format xl:max-w-3xl format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                        <header class="mb-4 mt-50 lg:mb-6 not-format">
+                            <div class="title-btn">
+                                <h1 class="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl">
+                                    Intro to HTML</h1>
 
-                        <h1 class="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl">
-                            Intro to HTML</h1>
-                    </header>
-                    <p class="lead">HTML (HyperText Markup Language) is the standard language used to create and design
-                        web pages.
-                        It consists of a series of elements that you use to enclose, or wrap, different parts of the
-                        content to make
-                        it appear or act a certain way.</p>
-                    <p>Every HTML document follows a basic structure:</p>
+                                <button matTooltip="Add to Watch Later" class="btn"
+                                    (click)="addToList('HTML Basics', '/htmlBasics', true)"
+                                    onClick="this.disabled=true;">
+                                    <svg width="27px" height="27px" viewBox="0 0 1920 1920"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M1585.963 1920 960.48 1544.711 335 1920V170.586C335 76.536 411.536 0 505.586 0h909.79c94.05 0 170.587 76.536 170.587 170.586V1920Z"
+                                                fill-rule="evenodd"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                        </header>
+                        <p class="lead">HTML (HyperText Markup Language) is the standard language used to create and
+                            design
+                            web pages.
+                            It consists of a series of elements that you use to enclose, or wrap, different parts of the
+                            content to make
+                            it appear or act a certain way.</p>
+                        <p>Every HTML document follows a basic structure:</p>
 
-                    <pre class="snippet "><code class="language-html text-white backdrop-saturate-125">&lt;!DOCTYPE html&gt;
+                        <pre class="snippet "><code class="language-html text-white backdrop-saturate-125">&lt;!DOCTYPE html&gt;
         &lt;html&gt;
         &lt;head&gt;
             &lt;title&gt;Page Title&lt;/title&gt;
@@ -35,14 +53,16 @@
             &lt;!-- Content goes here --&gt;
         &lt;/html&gt;</code></pre>
 
-                    <p>Replace <kbd>&lt;!-- Content goes here--&gt;</kbd> with your actual content, such as headings,
-                        paragraphs,
-                        images, links, lists, forms, etc., depending on what you want to display on your webpage.
-                        <br><br>Here’s a
-                        simple
-                        example with some content:</p>
+                        <p>Replace <kbd>&lt;!-- Content goes here--&gt;</kbd> with your actual content, such as
+                            headings,
+                            paragraphs,
+                            images, links, lists, forms, etc., depending on what you want to display on your webpage.
+                            <br><br>Here’s a
+                            simple
+                            example with some content:
+                        </p>
 
-                    <pre class="snippet"><code class="language-html text-white">&lt;!DOCTYPE html&gt;
+                        <pre class="snippet"><code class="language-html text-white">&lt;!DOCTYPE html&gt;
             &lt;html&gt;
             &lt;head&gt;
                 &lt;title&gt;My Website&lt;/title&gt;
@@ -54,54 +74,58 @@
                 &lt;a href="about.html">Learn more about us&gt;
             &lt;/html&gt;</code></pre>
 
-                    <!-- &lt;&gt;
+                        <!-- &lt;&gt;
                 <kbd>&lt;&gt;</kbd> -->
 
-                    <ul>
-                        <li> <kbd>&lt;!DOCTYPE html&gt;</kbd> Declares the document type and version of HTML (HTML5 in
-                            this case).
-                        </li>
-                        <li> <kbd>&lt;html&gt;</kbd> Root element that wraps all content on the page.
-                        </li>
-                        <li> <kbd>&lt;head&gt;</kbd> Container for meta-information about the document, such as title,
-                            links to CSS
-                            stylesheets, and scripts.
-                        </li>
-                        <li> <kbd>&lt;title&gt;</kbd> Sets the title of the webpage (displayed in the browser tab).
-                        </li>
-                        <li> <kbd>&lt;body&gt;</kbd> Contains all the content that will be displayed in the browser
-                            window.
-                        </li>
+                        <ul>
+                            <li> <kbd>&lt;!DOCTYPE html&gt;</kbd> Declares the document type and version of HTML (HTML5
+                                in
+                                this case).
+                            </li>
+                            <li> <kbd>&lt;html&gt;</kbd> Root element that wraps all content on the page.
+                            </li>
+                            <li> <kbd>&lt;head&gt;</kbd> Container for meta-information about the document, such as
+                                title,
+                                links to CSS
+                                stylesheets, and scripts.
+                            </li>
+                            <li> <kbd>&lt;title&gt;</kbd> Sets the title of the webpage (displayed in the browser tab).
+                            </li>
+                            <li> <kbd>&lt;body&gt;</kbd> Contains all the content that will be displayed in the browser
+                                window.
+                            </li>
 
-                    </ul>
-
-
-                    <p> In this example:</p>
-
-                    <ul>
-                        <li> <kbd>&lt;h1&gt;</kbd> is used for the main heading.
-                        </li>
-                        <li> <kbd>&lt;p&gt;</kbd> is used for a paragraph of text.
-                        </li>
-                        <li> <kbd>&lt;img&gt;</kbd> displays an image.
-                        </li>
-                        <li> <kbd>&lt;a&gt;</kbd> creates a hyperlink. You can expand and customize the content within
-                            the
-                        </li>
+                        </ul>
 
 
-                    </ul>
-                </article>
+                        <p> In this example:</p>
+
+                        <ul>
+                            <li> <kbd>&lt;h1&gt;</kbd> is used for the main heading.
+                            </li>
+                            <li> <kbd>&lt;p&gt;</kbd> is used for a paragraph of text.
+                            </li>
+                            <li> <kbd>&lt;img&gt;</kbd> displays an image.
+                            </li>
+                            <li> <kbd>&lt;a&gt;</kbd> creates a hyperlink. You can expand and customize the content
+                                within
+                                the
+                            </li>
 
 
+                        </ul>
+                    </article>
+                    <app-comments></app-comments>
+
+                </div>
             </div>
+
         </div>
+
+
+        <div clas="footer">
+            <app-footer></app-footer>
+        </div>
+
+
     </div>
-
-    
-    <div clas="footer">
-        <app-footer></app-footer>
-    </div>
-
-
-</div>

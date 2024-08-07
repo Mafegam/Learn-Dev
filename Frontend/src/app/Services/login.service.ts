@@ -21,14 +21,19 @@ export class LoginService {
   }
   // CRECION DE USUARIO
   signup(signUpCredentials: SignUpCredentials) {
-    return this.httpClient.post(this.API_URL + "/users", signUpCredentials);
+    return this.httpClient.post(this.API_URL + "/signup", signUpCredentials);
   }
+  // LEER USER
+  readUser(localID: string) {
+   return this.httpClient.get(`${this.API_URL}/users/${localID}`)
+ }
+ 
   // VERIFICA EL TOKEN GENERADO
   verifyToken(token: string) {
     return this.httpClient.get(`${this.API_URL}/login/${token}`);
   }
   // ACTUALIZA EL PASSWORD
-  updatePassword(credentials: Credentials, userID: string){
+  updatePassword(credentials: Credentials, userID: string) {
     return this.httpClient.put(`${this.API_URL}/users/${userID}`, credentials);
   }
   // ESTA LOGUEADO
@@ -50,5 +55,5 @@ export class LoginService {
     this.router.navigate(["/"])
   }
 
-  
+
 }

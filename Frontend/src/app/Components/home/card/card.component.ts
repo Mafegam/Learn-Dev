@@ -52,26 +52,6 @@ export class CardComponent {
     }
   }
 
-  // addToList(title: string, link: string, status: boolean) {
-  //   const list = { title, link, status }
-  //   const $link = link
-
-
-  //   this.watchLaterService.alreadyAdded($link).subscribe((exists) => {
-  //     if (exists) {
-  //       console.log("Already added");
-  //     } else {
-  //       this.toastrService.success("Added to your list")
-
-  //       this.watchLaterService.addToList(list).subscribe(() => {
-  //         console.log();
-  //       })
-  //     }
-  //   })
-
-
-  // }
-
   addToList(title: string, link: string, status: boolean) {
     const list = { title, link, status }
     this.toastrService.success("Added to your list")
