@@ -7,16 +7,6 @@
         </mat-form-field>
 
         <mat-form-field class="field">
-            <mat-label>New password</mat-label>
-            <input matInput>
-        </mat-form-field>
-
-        <mat-form-field class="field">
-            <mat-label>Confirm new password</mat-label>
-            <input matInput>
-        </mat-form-field>
-
-        <mat-form-field class="field">
             <mat-label>Current password</mat-label>
             <input matInput placeholder="password" [formControl]="email" (blur)="updateErrorMessage()" required />
             @if (email.invalid) {
@@ -24,6 +14,18 @@
             }
         </mat-form-field>
 
+
+        <mat-form-field class="field">
+            <mat-label>New password</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <mat-label>New password</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+      
 
 
       

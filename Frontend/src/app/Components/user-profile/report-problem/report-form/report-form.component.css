@@ -1,0 +1,7 @@
+.form-wrapper{
+    width: 500px;
+    max-width: 100%;
+    min-height: 60px;
+    overflow: hidden;
+    padding: 100px 3px;
+}

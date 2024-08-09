@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
 import { NavbarComponent } from '../../home/navbar/navbar.component';
-import { WatchLaterComponent } from '../watch-later/watch-later.component';
+import { WatchLaterComponent } from './watch-later/watch-later.component';
 
 @Component({
   selector: 'app-test',

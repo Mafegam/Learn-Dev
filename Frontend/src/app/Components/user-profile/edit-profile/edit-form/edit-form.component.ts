@@ -29,7 +29,7 @@ export class EditFormComponent {
 
   updateErrorMessage() {
     if (this.email.hasError('required')) {
-      this.errorMessage.set('You must enter a value');
+      this.errorMessage.set('Enter your old password');
     } else if (this.email.hasError('email')) {
       this.errorMessage.set('Not a valid email');
     } else {
