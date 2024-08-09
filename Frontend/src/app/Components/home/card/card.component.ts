@@ -6,7 +6,6 @@ import { ToastrService } from 'ngx-toastr';
 import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LoginService } from '../../../Services/login.service';
-import { BodyComponent } from '../../private/body/body.component';
 
 import { WatchLaterService } from '../../../Services/watch-later.service';
 import { Title } from '@angular/platform-browser';
@@ -16,7 +15,7 @@ initTWE({ Ripple });
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [RouterLink, NgFor, BodyComponent],
+  imports: [RouterLink, NgFor],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })

@@ -1,16 +1,18 @@
-<section cllass="container">
-    <h1 class="title">READ LATER</h1>
-    <button (click)="removeAll(retrievedList)">Clear list</button>
+<section class="container ">
+    <h1 class="title" style="color: #7DD3FC; font-size: 25px;">MY LIST</h1>
 
     <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
         @for(item of retrievedList; track item.id){
         <div class="example-box" cdkDrag>
             <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-            {{item.title}}
+            <button class="itemTitle" routerLink={{item.link}}>
+                {{item.title}}
+            </button>
+            <!-- REMOVE BTN -->
             <button (click)="removeTutorial(item._id)" class="inline-flex items-center ">
                 <svg class="delete-btn" height="18px" width="18px" version="1.1" id="Layer_1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330"
-                    xml:space="preserve" stroke="#e6e6e6">
+                    xml:space="preserve" stroke="#e6e6e6" fill="#7f7f7f">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
@@ -37,4 +39,7 @@
         </div>
         }
     </div>
+
+    <button class="clear-btn" (click)="removeAll(retrievedList)">CLEAR LIST</button>
+
 </section>

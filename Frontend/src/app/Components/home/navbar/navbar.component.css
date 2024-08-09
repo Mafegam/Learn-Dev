@@ -78,7 +78,7 @@
      color: white;
  }
 
- .signUp-btn {
+ /* .signUp-btn {
      color: #ffffff;
      font-weight: 500;
      background: #38bff856;
@@ -86,7 +86,7 @@
 
  .signUp-btn:hover {
      background: #38bff87e;
- }
+ } */
 
  .flex {
      gap: 25px;

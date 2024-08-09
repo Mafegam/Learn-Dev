@@ -7,7 +7,6 @@ import { ToastrService } from 'ngx-toastr';
 import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LoginService } from '../../../Services/login.service';
-import { BodyComponent } from '../../private/body/body.component';
 
 import { WatchLaterService } from '../../../Services/watch-later.service';
 import { Title } from '@angular/platform-browser';
@@ -16,7 +15,7 @@ import { CardComponent } from '../card/card.component';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterLink, MatSidenavModule, CardComponent, NgFor, BodyComponent],
+  imports: [RouterLink, MatSidenavModule, CardComponent, NgFor],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

@@ -5,7 +5,6 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-import { PrivateComponent } from './Components/private/private.component';
 import { htmlBasicsComponent } from './Components/content/htmlBasics/htmlBasics.component';
 import { HtmlElementsComponent } from './Components/content/html-elements/html-elements.component';
 import { FormattingComponent } from './Components/content/formatting/formatting.component';
@@ -19,7 +18,8 @@ import { DownloadResourcesComponent } from './Components/download-resources/down
 import { CatsFactsComponent } from './Components/APIs/cats-facts/cats-facts.component';
 import { DogsFactsComponent } from './Components/APIs/dogs-facts/dogs-facts.component';
 
-import { TestComponent } from './Components/test/test.component';
+import { ProfileComponent } from './Components/user-profile/profile/profile.component';
+import { EditProfileComponent } from './Components/user-profile/edit-profile/edit-profile.component';
 
 export const routes: Routes = [
     {
@@ -30,10 +30,17 @@ export const routes: Routes = [
     },
     {
         path: 'profile',
-        title: "Profile",
-        component: PrivateComponent,
+        title: "My Profile",
+        component: ProfileComponent,
         canActivate: [activateGuard]
     },
+    {
+        path: 'profile/edit-profile',
+        title: "Edit Profile",
+        component: EditProfileComponent,
+        canActivate: [activateGuard]
+    },
+    
     { path: 'login', title: "Login", component: LoginComponent },
     { path: 'signup', title: "Sign Up", component: SignUpComponent },
     { path: 'additionalResources', title: "Additional Resources", component: DownloadResourcesComponent },
@@ -49,7 +56,7 @@ export const routes: Routes = [
 
     { path: 'dogsFacts', title: "Dogs Facts", component: DogsFactsComponent, canActivate: [activateGuard] },
     { path: 'catsFacts', title: "Cats Facts", component: CatsFactsComponent, canActivate: [activateGuard] },
-    { path: 'test', title: "test", component: TestComponent },
+
 
     { path: '', redirectTo: "introduction", pathMatch: "full" },
     { path: '**', title: "404 Page Not Found", component: PageNotFoundComponent },
