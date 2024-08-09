@@ -1,0 +1,62 @@
+.bg {
+    width: 100vw;
+    height: 100vh;
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background-color: #0f172a;
+    z-index: -1;
+  }
+  
+  .container {
+    margin-top: 30px;
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". sidebar body body ."
+      ". . . . ."
+      ". . . . .";
+    justify-items: end;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+  
+  .body {
+    grid-area: body;
+  }
+  
+  .flex {
+    margin-bottom: 15px;
+  }
+  
+  .flex:hover {
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0) 46%, rgba(0, 212, 255, 0.3211485277704832) 100%);
+  }
+  
+  .selected {
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0) 46%, rgba(0, 212, 255, 0.3211485277704832) 100%);
+  }
+  
+
+  /* FOOTER */
+  .divider {
+    height: 2px;
+    background-color: #2e335a;
+    width: 100%;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.1, #1d2038), color-stop(0.5, #1e083b), color-stop(0.98, #222646));
+  }
+  
+  .block {
+    padding: 15px;
+  }
+  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }

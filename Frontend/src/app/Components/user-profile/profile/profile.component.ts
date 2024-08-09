@@ -21,7 +21,6 @@ export class ProfileComponent {
   loginService = inject(LoginService)
   user: any[] = [];
   username: string = "";
-  // toastrService = inject(ToastrService);
   router = inject(Router);
   userID: string = "";
 

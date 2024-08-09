@@ -25,6 +25,7 @@ import { DogsFactsComponent } from './Components/APIs/dogs-facts/dogs-facts.comp
 import { ProfileComponent } from './Components/user-profile/profile/profile.component';
 import { EditProfileComponent } from './Components/user-profile/edit-profile/edit-profile.component';
 import { ReportProblemComponent } from './Components/user-profile/report-problem/report-problem.component';
+import { DeleteAcctComponent } from './Components/user-profile/delete-acct/delete-acct.component';
 
 export const routes: Routes = [
     {
@@ -49,6 +50,12 @@ export const routes: Routes = [
         path: 'profile/contact-us',
         title: "Report a problem",
         component: ReportProblemComponent,
+        canActivate: [activateGuard]
+    },
+    {
+        path: 'profile/delete-account',
+        title: "Delete Account",
+        component: DeleteAcctComponent,
         canActivate: [activateGuard]
     },
     { path: 'login', title: "Login", component: LoginComponent },
