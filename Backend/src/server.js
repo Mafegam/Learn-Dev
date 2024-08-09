@@ -5,6 +5,8 @@ import cors from "cors";
 import crudRouter from "./Routes/crudRoute.js" ;
 import loginRouter from "./Routes/loginRoute.js";
 import contactRouter from "./Routes/contactRoute.js"
+import commentRouter from "./Routes/commentRoute.js"
+import watchLaterRouter from "./Routes/watchLaterRoute.js";
 
 import dogsRouter from "./Routes/dogsRoute.js";
 
@@ -14,8 +16,14 @@ servidor.use(cors()) ,
 servidor.use(morgan("dev"))
 servidor.use(express.json());
 
-// SIGNUP Y WATCH LATER
+// SIGNUP
 servidor.use("/users", crudRouter);
+
+// COMMENT
+servidor.use("/comment", commentRouter)
+
+// WATCH LATER
+servidor.use("/watchLater", watchLaterRouter)
 
 // LOGIN
 servidor.use("/login", loginRouter);

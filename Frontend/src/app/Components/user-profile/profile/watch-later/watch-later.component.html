@@ -1,6 +1,8 @@
 <section class="container ">
-    <h1 class="title" style="color: #7DD3FC; font-size: 25px;">MY LIST</h1>
-
+    <div class="flex w-full flex-col mb-5">
+        <h1 class="text-center title-font mb-4 text-2xl font-medium text-white sm:text-3xl">My List</h1>
+        <h2>Save and manage your list of tutorials </h2>
+    </div>
     <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
         @for(item of retrievedList; track item.id){
         <div class="example-box" cdkDrag>

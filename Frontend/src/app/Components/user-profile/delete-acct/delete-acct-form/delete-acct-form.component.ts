@@ -12,6 +12,8 @@ import { inject } from '@angular/core';
 import { LoginService} from '../../../../Services/login.service';
 import { Router } from '@angular/router';
 
+import { Credentials } from '../../../../Interfaces/credentials';
+
 @Component({
   selector: 'app-delete-acct-form',
   standalone: true,
@@ -24,6 +26,7 @@ import { Router } from '@angular/router';
 export class DeleteAcctFormComponent {
   loginService = inject(LoginService)
   router = inject(Router);
+  userID: string = "";
 
 
   readonly email = new FormControl('', [Validators.required, Validators.email]);
@@ -46,6 +49,7 @@ export class DeleteAcctFormComponent {
     }
   }
 
+  
   handleDelete(userID: string) {
     const decision = confirm("Click ACCEPT to confirm")
 
@@ -53,14 +57,29 @@ export class DeleteAcctFormComponent {
       this.loginService.deleteUser(userID).subscribe((respuesta: any) => {
         if (respuesta.resultado === 'Exitoso') {
           this.loginService.logout();
-          this.router.navigateByUrl("/")
-          
+          this.router.navigateByUrl("/")       
         } else {
           console.log(respuesta);
         }
       });
     } else {
       
+    }
+  }
+
+  ngOnInit() {
+    const token: any = localStorage.getItem("token")
+    if (token) {
+      this.loginService.verifyToken(token).subscribe((response: any) => {
+        if (response.resultado === "Successful") {
+          this.userID = response.data.id;
+          console.log(this.userID);
+        } else {
+          this.loginService.logout();
+        }
+      });
+    } else {
+      this.loginService.logout();
     }
   }
 }

@@ -11,7 +11,6 @@
   
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       ". sidebar body body ."
@@ -57,7 +56,6 @@
   .block {
     padding: 15px;
   }
-  
   .footer {
     position: fixed;
     left: 0;

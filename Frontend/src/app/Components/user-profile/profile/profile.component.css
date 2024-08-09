@@ -6,20 +6,11 @@
   z-index: -1;
 }
 
-/* .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  max-width: 1500px;
-  margin: 30px auto;
-} */
-
 .container {
   margin-top: 30px;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
     ". sidebar body body ."
@@ -71,4 +62,12 @@
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+@media (max-width: 885px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 }

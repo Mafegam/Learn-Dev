@@ -9,7 +9,7 @@ export class ContactService {
   httpClient = inject(HttpClient);
   router = inject(Router); 
 
-  API_URL = "http://localhost:3000";
+  API_URL = "http://3.140.246.28:3000";
 
   createMessage(messageSubmitted: any){
     this.router.navigate(["/thanks"])

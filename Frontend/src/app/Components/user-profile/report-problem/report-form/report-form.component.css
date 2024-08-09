@@ -5,3 +5,7 @@
     overflow: hidden;
     padding: 100px 3px;
 }
+.field{
+    width: 100%;
+    border-radius: 5px;
+}

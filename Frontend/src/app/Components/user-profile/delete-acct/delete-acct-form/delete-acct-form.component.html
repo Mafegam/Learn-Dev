@@ -1,5 +1,11 @@
 <form class="form-wrapper md:space-y-6" action="#">
     <div>
+
+        <div class="flex w-full flex-col mb-5">
+            <h1 class="text-center title-font mb-4 text-2xl font-medium text-white sm:text-3xl">Account Deletion</h1>
+            <h2>We're sorry to see you go </h2>
+            <p>Once you delete your account, your Email, Username and "My List" will be permanently deleted.</p>
+        </div>
         <mat-form-field class="field">
             <mat-label>Email</mat-label>
             <input matInput placeholder="password" [formControl]="email" (blur)="updateErrorMessage()" required />
@@ -18,7 +24,7 @@
             <input matInput>
         </mat-form-field>
         <div class="w-full p-2">
-            <button
+            <button (click)="handleDelete(userID)"
                 class="mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">Submit</button>
         </div>
     </div>
