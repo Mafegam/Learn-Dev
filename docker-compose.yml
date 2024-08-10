@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: front
+    ports:
+      - "80:4200"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: back
+    ports:
+      - "3000:3000"
+networks:
+  default:
+    driver: bridge
