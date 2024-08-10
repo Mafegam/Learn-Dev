@@ -2,13 +2,13 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 
-import crudRouter from "./Routes/crudRoute.js" ;
-import loginRouter from "./Routes/loginRoute.js";
-import contactRouter from "./Routes/contactRoute.js"
-import commentRouter from "./Routes/commentRoute.js"
-import watchLaterRouter from "./Routes/watchLaterRoute.js";
+import crudRouter from "./routes/crudRoute.js" ;
+import loginRouter from "./routes/loginRoute.js";
+import contactRouter from "./routes/contactRoute.js"
+import commentRouter from "./routes/commentRoute.js"
+import watchLaterRouter from "./routes/watchLaterRoute.js";
 
-import dogsRouter from "./Routes/dogsRoute.js";
+import dogsRouter from "./routes/dogsRoute.js";
 
 const servidor = express();
 
