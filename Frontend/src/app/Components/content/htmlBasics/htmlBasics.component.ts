@@ -7,13 +7,12 @@ import { CommentsComponent } from '../comments/comments.component';
 import { WatchLaterService } from '../../../Services/watch-later.service';
 import { ToastrService } from 'ngx-toastr';
 
-import { TooltipPosition, MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-htmlBasics',
   standalone: true,
-  imports: [NavbarComponent, SidebarComponent, CommentsComponent, FooterComponent,
-    MatTooltipModule],
+  imports: [NavbarComponent, SidebarComponent, CommentsComponent, FooterComponent, MatTooltipModule],
   templateUrl: './htmlBasics.component.html',
   styleUrl: './htmlBasics.component.css'
 })
