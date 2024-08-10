@@ -1,5 +1,5 @@
 import { Router } from "express";
-import crudController from "../Controllers/crudController.js"
+import crudController from "../controllers/crudController.js"
 
 const crudRouter = Router ();
 

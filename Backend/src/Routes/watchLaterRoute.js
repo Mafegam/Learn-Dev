@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import watchLaterController from "../Controllers/watchLaterController.js";
+import watchLaterController from "../controllers/watchLaterController.js";
 
 const watchLaterRouter = Router ();
 
