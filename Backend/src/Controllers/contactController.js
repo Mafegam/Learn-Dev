@@ -1,4 +1,4 @@
-import contactScheme from "../Schemes/contactScheme.js";
+import contactScheme from "../schemes/contactScheme.js";
 
 const contactController = {
 	createMessage: async (solicitud, respuesta) => {
