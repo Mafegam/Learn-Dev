@@ -12,7 +12,7 @@
                         <a class=" items-center p-2 text-gray-900 rounded-lg dark:text-white ">
                             <span class="ms-3">
                                 <h1 class="welcome" style="color: #7DD3FC; font-size: 25px;; text-align: center;">
-                                    Welcome, test!
+                                    Welcome, {{username}}!
                                 </h1>
                             </span>
                         </a>
@@ -114,7 +114,7 @@
                     </li>
                     <!-- LOG OUT -->
                     <li>
-                        <button type="button"
+                        <button type="button" (click)="loginService.logout()"
                             class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  "
                             aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"

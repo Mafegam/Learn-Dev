@@ -1,11 +1,16 @@
 <div class="bg">
 
-<app-navbar></app-navbar>
+    <app-navbar></app-navbar>
 
-    <img src="{{imageURL}}" id="dogImage" alt="API">
-    <button (click)="onClick()" class="rounded-md bg-indigo-600 mt-10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">New Image</button>
+    <div class="content">
+        <img src="{{imageURL}}" id="dogImage" alt="API">
 
-<h2>Did you know?</h2>
-<p>{{dogFact}}</p>
+        <h1 class="text-3xl font-extrabold leading-tight lg:text-4xl">Did you know?</h1>
 
+        <p class="fact">{{dogFact}}</p>
+
+        <button (click)="onClick()"
+            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">New
+            Image</button>
+    </div>
 </div>

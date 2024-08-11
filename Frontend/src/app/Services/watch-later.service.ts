@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class WatchLaterService {
   httpClient = inject(HttpClient);
 
-  API_URL = "http://3.140.246.28:3000";
+  API_URL = "http://localhost:3000";
 
   allTutorials: any[] = [];
 

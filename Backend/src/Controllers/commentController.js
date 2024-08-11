@@ -3,11 +3,12 @@ import commentScheme from "../schemes/commentScheme.js";
 const commentController = {
     createComment: async (solicitud, respuesta) => {
         try {
-            const { comment, username, email } = solicitud.body
+            const { comment, username, email, formattedDate } = solicitud.body
             const newComment = new commentScheme({
                 comment: comment,
                 username: username,
-                email: email
+                email: email,
+                formattedDate: formattedDate
             })
 
             const commentCreated = await newComment.save();

@@ -18,9 +18,10 @@ export class ReportProblemComponent {
   loginService = inject(LoginService)
   user: any[] = [];
   username: string = "";
-  // toastrService = inject(ToastrService);
   router = inject(Router);
   userID: string = "";
+  usernameLower: string = "";
+
 
   ngOnInit() {
     const token: any = localStorage.getItem("token")
@@ -29,9 +30,9 @@ export class ReportProblemComponent {
         console.log(response);
 
         if (response.resultado === "Successful") {
-          this.username = response.data.username;
+          this.usernameLower = response.data.username;
+          this.username = this.usernameLower[0].toUpperCase() + this.usernameLower.slice(1);
           this.userID = response.data.id;
-          console.log(this.userID);
 
         } else {
           this.loginService.logout();
@@ -40,6 +41,10 @@ export class ReportProblemComponent {
     } else {
       this.loginService.logout();
     }
+  }
+
+  logout(){
+    this.loginService.logout()
   }
 
 }

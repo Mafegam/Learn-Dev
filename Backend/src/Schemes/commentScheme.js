@@ -4,7 +4,8 @@ const commentScheme = new Schema(
     {
         username: { type: String, required: true },
         comment: { type: String, required: true },
-        email: { type: String, required: true}
+        email: { type: String, required: true},
+        formattedDate: { type: String, required: true }
     }
 )
 

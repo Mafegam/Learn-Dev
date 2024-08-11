@@ -20,17 +20,17 @@ export class DeleteAcctComponent {
   username: string = "";
   router = inject(Router);
   userID: string = "";
+  usernameLower: string = "";
 
   ngOnInit() {
     const token: any = localStorage.getItem("token")
     if (token) {
       this.loginService.verifyToken(token).subscribe((response: any) => {
-        console.log(response);
-
         if (response.resultado === "Successful") {
           this.username = response.data.username;
           this.userID = response.data.id;
-          console.log(this.userID);
+          this.usernameLower = response.data.username;
+          this.username = this.usernameLower[0].toUpperCase() + this.usernameLower.slice(1);
 
         } else {
           this.loginService.logout();

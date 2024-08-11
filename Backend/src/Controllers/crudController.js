@@ -5,12 +5,12 @@ const ControladorUsuarios = {
     crearUsuario: async (solicitud, respuesta) => {
         try {
             const { username, email, password } = solicitud.body;
+            const hashPassword = await bcrypt.hash(password, 10);
             const newUser = new userScheme({
                 username: username,
                 email: email,
                 password: hashPassword,
             });
-            const hashPassword = await bcrypt.hash(password, 10);
             
             const userCreated = await newUser.save();
             if (userCreated._id) {
@@ -20,6 +20,7 @@ const ControladorUsuarios = {
                     datos: userCreated._id
                 })
                 console.log(userCreated);
+            } else{
             }
         } catch (error) {
             console.log("Error: ", error);

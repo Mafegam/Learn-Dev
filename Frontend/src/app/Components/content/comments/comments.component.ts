@@ -51,11 +51,13 @@ export class CommentsComponent {
   //COMMENTS EN BASDE DE DATOS
   retrievedComments: any[] = [];
   retrievedEmails: string[] = [];
+  retrievedDate: string[] = [];
 
   // DATOS DEL USER LOGUEADO
   retrievedUsername: string = '';
   retrievedMail: string = '';
   localID: string = '';
+  currentDate: string | null = null;
 
   emailMatch: boolean = true;
 
@@ -70,10 +72,19 @@ export class CommentsComponent {
       const comment = this.newComment.value.comment;
       const username = this.retrievedUsername;
       const email = this.retrievedMail;
+      // DATE
+      const date = new Date();
+      const options = { month: 'long' } as const; // 'long' for full month name
+      const monthName = date.toLocaleString('default', options);
+      const day = date.getDate();
+      const year = date.getFullYear();
+      const formattedDate = `${monthName} ${day}, ${year}`;
 
-      const commentSubmitted = { comment, username, email }
+      const commentSubmitted = { comment, username, email, formattedDate }
 
       this.commentService.createComment(commentSubmitted).subscribe()
+      this.newComment.reset();
+
     } else {
       console.log("Form not filled!");
     }
@@ -82,9 +93,9 @@ export class CommentsComponent {
   retrieveComments() {
     this.commentService.retrieveComments().subscribe((respuesta: any) => {
       if (respuesta) {
-        this.retrievedComments = respuesta.datos
+        this.retrievedComments = respuesta.datos //RETRIEVE ALL COMMENTS
         this.retrievedEmails = this.retrievedComments.map(obj => obj.email); // RETRIEVE EMAIL ON EACH COMMENT
-        console.log(this.retrievedEmails);
+
       } else {
         console.log("Errror fatal", Error);
       }

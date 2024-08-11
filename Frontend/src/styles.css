@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.custom-dialog-container .mat-dialog-container {
+    background-color: #00000054;
+    backdrop-filter: blur(10px);
+}
+
+
 .toast-warning {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(175deg, rgba(46, 51, 90, 0.671) 0%, rgba(33, 27, 51, 0.733) 100%) !important;
@@ -36,5 +43,13 @@ li,
 strong {
     color: #94A3B8;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

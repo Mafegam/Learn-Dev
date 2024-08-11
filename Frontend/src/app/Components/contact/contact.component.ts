@@ -1,17 +1,27 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormGroup, Validators, FormBuilder, FormControl } from "@angular/forms";
 
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { NavbarComponent } from '../home/navbar/navbar.component';
 import { FooterComponent } from '../home/footer/footer.component';
 import { ContactService } from '../../Services/contact.service';
 
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle, 
+} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, FormsModule, ReactiveFormsModule],
+  imports: [NavbarComponent, FooterComponent, FormsModule, ReactiveFormsModule, MatButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
@@ -25,6 +35,8 @@ export class ContactComponent {
     email: new FormControl('', Validators.required),
     message: new FormControl('', Validators.required)
   });
+
+  readonly dialog = inject(MatDialog);
 
   handleSubmit() {
     if (this.newMessage.valid) {
@@ -48,4 +60,22 @@ export class ContactComponent {
       console.log("Form not filled!");
     }
   }
+  // MODAL
+  openDialog() {
+    this.dialog.open(Modal, { panelClass: 'mat-dialog-container'});
+  }
+}
+
+// MODAL COMPONENT
+@Component({
+  selector: 'modal.component',
+  templateUrl: 'modal.component.html',
+  styleUrl: './modal.component.css',
+  standalone: true,
+  imports: [MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule, RouterLink],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class Modal {
+  router = inject(Router);
+
 }
