@@ -54,15 +54,26 @@ export class CardComponent {
   }
 
   addToList(title: string, link: string, status: boolean) {
-    const list = { title, link, status }
-    this.snackBar.open('Added to your list', 'Close', {
-      duration: 4000,
-      verticalPosition: 'top',
-      horizontalPosition: 'center',
-      panelClass: ['red-snackbar', 'login-snackbar'],
-    });
-    this.watchLaterService.addToList(list).subscribe(() => {
-      console.log();
+    this.watchLaterService.alreadyExists(link).subscribe((respuesta: any) => {
+      if (respuesta.resultado === "Successful") {
+        this.snackBar.open('This link is already in your list', 'Close', {
+          duration: 4000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+          panelClass: ['red-snackbar', 'login-snackbar'],
+        });
+      } else {
+        const list = { title, link, status }
+
+        this.watchLaterService.addToList(list).subscribe(() => {
+          this.snackBar.open('Added to your list', 'Close', {
+            duration: 4000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+            panelClass: ['red-snackbar', 'login-snackbar'],
+          });
+        })
+      }
     })
   }
 }

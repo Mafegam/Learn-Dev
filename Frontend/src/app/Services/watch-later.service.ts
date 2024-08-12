@@ -31,8 +31,8 @@ export class WatchLaterService {
     return this.httpClient.delete(this.API_URL + "/watchLater")  
   }
 
-  alreadyAdded($link: string): Observable<boolean> {
-    return this.httpClient.get<boolean>(`${this.API_URL}/watchLater/${$link}`);
+  alreadyExists($link: string) {
+    return this.httpClient.get(`${this.API_URL}/watchLater/exists?link=${$link}`);
   }
 }
 
