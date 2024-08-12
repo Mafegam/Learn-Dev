@@ -3,16 +3,18 @@ import { ChangeDetectionStrategy, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { merge } from 'rxjs';
+import { merge, Subscriber } from 'rxjs';
+import { DeleteCredentials } from '../../../../Interfaces/delete-credentials';
 
 import { inject } from '@angular/core';
-import { LoginService} from '../../../../Services/login.service';
+import { LoginService } from '../../../../Services/login.service';
 import { Router } from '@angular/router';
 
 import { Credentials } from '../../../../Interfaces/credentials';
+import { __classPrivateFieldGet } from 'tslib';
 
 @Component({
   selector: 'app-delete-acct-form',
@@ -26,44 +28,54 @@ import { Credentials } from '../../../../Interfaces/credentials';
 export class DeleteAcctFormComponent {
   loginService = inject(LoginService)
   router = inject(Router);
-  userID: string = "";
+  localID: string = "";
+
+  retrievedEmail: string = ""
+  retrievedPassword: string = ""
+
+  deleteForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+  })
 
 
-  readonly email = new FormControl('', [Validators.required, Validators.email]);
+  retrieveUser() {
+    this.loginService.readUser(this.localID).subscribe((respuesta: any) => {
+      this.retrievedEmail = respuesta.datos.email
+      this.retrievedPassword = respuesta.datos.password
+    })
 
-  errorMessage = signal('');
-
-  constructor() {
-    merge(this.email.statusChanges, this.email.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.updateErrorMessage());
   }
 
-  updateErrorMessage() {
-    if (this.email.hasError('required')) {
-      this.errorMessage.set('Enter your old password');
-    } else if (this.email.hasError('email')) {
-      this.errorMessage.set('Not a valid email');
-    } else {
-      this.errorMessage.set('');
-    }
-  }
+  deleteUser() {
+    if (this.deleteForm.valid) {
+      const email = this.deleteForm.value.email
+      const password = this.deleteForm.value.password
+      if (typeof password === "string" && typeof email === "string") {
+        const credentials: Credentials = {
+          email: email,
+          password: password,
+          currentPassword: '',
+          confirmPassword: ''
+        };
+        this.loginService.login(credentials).subscribe((respuesta: any) => {
+          if (respuesta.resultado === "Successful") {
+            const decision = confirm("Click ACCEPT to confirm")
+            if(decision) {
+              this.loginService.deleteUser(this.localID).subscribe((respuesta: any) => {
+                console.log("Eliminada");
+                this.loginService.logout();
+                this.router.navigateByUrl("/")
+              })
+            }
+          } else {
+            console.log("Invalid credentials")
+          }
+        });
 
-  
-  handleDelete(userID: string) {
-    const decision = confirm("Click ACCEPT to confirm")
-
-    if (decision) {
-      this.loginService.deleteUser(userID).subscribe((respuesta: any) => {
-        if (respuesta.resultado === 'Exitoso') {
-          this.loginService.logout();
-          this.router.navigateByUrl("/")       
-        } else {
-          console.log(respuesta);
-        }
-      });
-    } else {
-      
+      } else {
+        console.log("Form invalid");
+      }
     }
   }
 
@@ -72,8 +84,8 @@ export class DeleteAcctFormComponent {
     if (token) {
       this.loginService.verifyToken(token).subscribe((response: any) => {
         if (response.resultado === "Successful") {
-          this.userID = response.data.id;
-          console.log(this.userID);
+          this.localID = response.data.id;
+          this.retrieveUser()
         } else {
           this.loginService.logout();
         }

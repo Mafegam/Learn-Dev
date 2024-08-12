@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Credentials } from '../Interfaces/credentials';
 import { SignUpCredentials } from '../Interfaces/sign-up-credentials';
 import { UpdatePasswordCredentials } from '../Interfaces/updatePassword-credentials';
+import { DeleteCredentials } from '../Interfaces/delete-credentials';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class LoginService {
   }
   // CRECION DE USUARIO
   signup(signUpCredentials: SignUpCredentials) {
-    return this.httpClient.post(this.API_URL + "/signup", signUpCredentials);
+    return this.httpClient.post(this.API_URL + "/users", signUpCredentials);
   }
   // LEER USER
   readUser(localID: string) {
