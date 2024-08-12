@@ -74,7 +74,7 @@ export class CommentsComponent {
       const email = this.retrievedMail;
       // DATE
       const date = new Date();
-      const options = { month: 'long' } as const; // 'long' for full month name
+      const options = { month: 'long' } as const;
       const monthName = date.toLocaleString('default', options);
       const day = date.getDate();
       const year = date.getFullYear();

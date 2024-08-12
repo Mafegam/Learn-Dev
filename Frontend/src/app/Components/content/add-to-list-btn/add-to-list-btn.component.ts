@@ -31,7 +31,7 @@ export class AddToListBtnComponent {
   addToList(title: string, link: string, status: boolean) {
     this.watchLaterService.alreadyExists(link).subscribe((respuesta: any) => {
       if (respuesta.resultado === "Successful") {
-        this.snackBar.open('This link is already in your list', 'Close', {
+        this.snackBar.open('This tutorial is already in your list', 'Close', {
           duration: 4000,
           verticalPosition: 'top',
           horizontalPosition: 'center',

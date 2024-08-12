@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validator, FormGroupName, 
 import { LoginService } from '../../Services/login.service';
 import { SignUpCredentials } from '../../Interfaces/sign-up-credentials';
 import { isEmpty } from 'rxjs';
+import { Credentials } from '../../Interfaces/credentials';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -78,4 +79,5 @@ export class SignUpComponent {
       });
     }
   }
+
 }

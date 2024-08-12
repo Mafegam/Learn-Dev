@@ -26,9 +26,14 @@ export class LoginService {
   }
   // LEER USER
   readUser(localID: string) {
-   return this.httpClient.get(`${this.API_URL}/users/${localID}`)
- }
- 
+    return this.httpClient.get(`${this.API_URL}/users/${localID}`)
+  }
+
+  //  LEER TODOS USERS
+  retrieveUsers() {
+    return this.httpClient.get(this.API_URL + "/users")
+  }
+
   // VERIFICA EL TOKEN GENERADO
   verifyToken(token: string) {
     return this.httpClient.get(`${this.API_URL}/login/${token}`);
