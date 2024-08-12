@@ -22,6 +22,12 @@ h6 {
     color: #E2e8f0;
 }
 
+.title-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 kbd, b {
     color: #7DD3FC;
 }

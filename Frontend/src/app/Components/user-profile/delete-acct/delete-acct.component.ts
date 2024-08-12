@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../home/navbar/navbar.component';
+import { ProfileNavbarComponent } from '../profile-navbar/profile-navbar.component';
 import { DeleteAcctFormComponent } from './delete-acct-form/delete-acct-form.component';
 
 import { RouterLink } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-delete-acct',
   standalone: true,
-  imports: [NavbarComponent, DeleteAcctFormComponent, RouterLink],
+  imports: [ProfileNavbarComponent, DeleteAcctFormComponent, RouterLink],
   templateUrl: './delete-acct.component.html',
   styleUrl: './delete-acct.component.css'
 })

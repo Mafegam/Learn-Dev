@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../home/navbar/navbar.component';
+import { ProfileNavbarComponent } from '../profile-navbar/profile-navbar.component'; 
 import { ReportFormComponent } from './report-form/report-form.component';
 
 import { inject } from '@angular/core';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-report-problem',
   standalone: true,
-  imports: [ReportFormComponent, NavbarComponent, RouterLink],
+  imports: [ReportFormComponent, ProfileNavbarComponent, RouterLink],
   templateUrl: './report-problem.component.html',
   styleUrl: './report-problem.component.css'
 })

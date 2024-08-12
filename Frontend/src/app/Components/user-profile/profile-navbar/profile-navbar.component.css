@@ -1,0 +1,99 @@
+.navContainer {
+    background-color: inherit;
+    margin: auto 200px;
+    height: 70px;
+    padding: 16px 32px;
+    display: sticky;
+}
+
+.topIconFull {
+    height: 35px;
+    width: auto;
+    cursor: pointer;
+}
+
+.topIconResponsive {
+    display: none;
+    height: 35px;
+    width: auto;
+    cursor: pointer;
+
+}
+
+.text-white {
+    letter-spacing: 1.5px;
+    color: white;
+    transition: 0.6s;
+}
+.text-white:hover{
+    color: #7DD3FC;
+
+}
+
+.divider {
+    height: 2px;
+    background-color: #2e335a;
+    width: 100%;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.1, #2e335a), color-stop(0.5, #6a1fcc), color-stop(0.98, #2e335a));
+}
+
+.divider2 {
+    height: 2px;
+    width: 100%;
+    margin-top: 5px;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, #2e335a), color-stop(0.5, #868686), color-stop(0.98, #2e335a));
+}
+
+
+
+.flex {
+    gap: 25px;
+}
+
+@media (max-width: 385px) {
+    .flex {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 592px) {
+
+    button {
+        font-size: 3.1vw;
+    }
+
+    .navContainer {
+        padding: 5px 15px
+    }
+
+    .flex {
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 675px) {
+    .flex {
+        display: flex;
+    }
+
+    .topIconFull,
+    .aboutMe {
+        display: none;
+
+    }
+
+    .topIconResponsive {
+        display: block;
+        cursor: pointer;
+
+    }
+
+}
+
+@media (max-width: 1080px) {
+    .navContainer {
+        margin: auto;
+    }
+}

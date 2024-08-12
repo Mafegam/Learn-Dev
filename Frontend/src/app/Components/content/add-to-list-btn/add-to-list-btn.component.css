@@ -1,0 +1,9 @@
+
+.btn{
+    fill: #7DD3FC;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    fill: #2e4f5f;
+}

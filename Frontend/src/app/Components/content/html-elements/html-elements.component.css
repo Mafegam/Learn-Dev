@@ -1,16 +1,8 @@
 .bg {
-    /* background-size: 100% 100%;
-background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
-background-image: radial-gradient(70% 53% at 36% 76%, #1e293bb0 0%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #1e293bb0 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #5E35AF4D 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #432B744D 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #3160751C 18%, #FF000000 100%),radial-gradient(74% 86% at 67% 38%, #1e293bb0 24%, #073AFF00 100%),linear-gradient(125deg, #204B67FF 1%, #1E293BFF 100%); 
-*/
-   
-
-
-background-size: 100% 100%;
-background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
-background-image: radial-gradient(70% 53% at 36% 76%, #161e2cb0 0%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #1e293bb0 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #5E35AF4D 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #432B744D 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #3160751C 18%, #FF000000 100%),radial-gradient(74% 86% at 67% 38%, #1C283AB0 24%, #073AFF00 100%),linear-gradient(125deg, #1E293BFF 0%, #2348ACFF 99%); 
-
-
+    background-size: 100% 100%;
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background-image: radial-gradient(18% 28% at 18% 71%, #20199259 6%, #073AFF00 100%), radial-gradient(70% 53% at 36% 76%, #0F454CFF 0%, #073AFF00 100%), radial-gradient(18% 28% at 35% 87%, #0C2D28FF 7%, #073AFF00 100%), radial-gradient(31% 43% at 7% 98%, #0f1729 24%, #073AFF00 100%), radial-gradient(35% 56% at 91% 74%, #0f1729 9%, #073AFF00 100%), radial-gradient(74% 86% at 67% 38%, #0f1729 24%, #073AFF00 100%), linear-gradient(125deg, #0f1729 1%, rgb(48, 7, 145) 100%);
+    z-index: -1;
 }
 
 .navbar {
@@ -18,9 +10,14 @@ background-image: radial-gradient(70% 53% at 36% 76%, #161e2cb0 0%, #073AFF00 10
     z-index: 1;
     top: 0;
     left: 0;
-    
+
 }
 
+.title-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
 
 h1,
 h2,
@@ -31,7 +28,8 @@ h6 {
     color: #E2e8f0;
 }
 
-kbd, b {
+kbd,
+b {
     color: #7DD3FC;
 }
 
@@ -52,4 +50,3 @@ strong {
     border-color: rgb(80, 80, 90);
     ;
 }
-

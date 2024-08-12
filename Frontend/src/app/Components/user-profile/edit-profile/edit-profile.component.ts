@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarComponent } from '../../home/navbar/navbar.component';
+import { ProfileNavbarComponent } from '../profile-navbar/profile-navbar.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { RouterLink } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { LoginService } from '../../../Services/login.service';
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
-  imports: [NavbarComponent, EditFormComponent, RouterLink],
+  imports: [ProfileNavbarComponent, EditFormComponent, RouterLink],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css'
 })

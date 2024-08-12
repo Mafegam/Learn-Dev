@@ -69,24 +69,18 @@
  .text-white,
  .signUp-btn {
      letter-spacing: 1.5px;
-     color: #ebebf5c7;
+     color: white;
      transition: 0.6s;
  }
 
- .text-white,
- .signUp-btn:hover {
-     color: white;
+ .text-white:hover {
+    color: #7DD3FC;
  }
 
- /* .signUp-btn {
+ .signup-btn {
      color: #ffffff;
      font-weight: 500;
-     background: #38bff856;
  }
-
- .signUp-btn:hover {
-     background: #38bff87e;
- } */
 
  .flex {
      gap: 25px;

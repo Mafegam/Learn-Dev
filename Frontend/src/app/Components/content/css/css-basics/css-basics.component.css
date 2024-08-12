@@ -28,6 +28,12 @@ kbd, b {
     color: #7DD3FC;
 }
 
+.title-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 p,
 li,
 strong {

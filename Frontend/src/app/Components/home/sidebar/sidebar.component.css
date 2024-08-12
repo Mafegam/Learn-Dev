@@ -1,6 +1,6 @@
 .fixed {
     margin-top: 70px;
-    z-index: 9999;
+    z-index: 0;
     overflow-y: auto;
 }
 .sr-only {

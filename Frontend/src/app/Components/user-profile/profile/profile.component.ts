@@ -5,13 +5,13 @@ import { LoginService } from '../../../Services/login.service';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
-import { NavbarComponent } from '../../home/navbar/navbar.component';
+import { ProfileNavbarComponent } from '../profile-navbar/profile-navbar.component';
 import { WatchLaterComponent } from './watch-later/watch-later.component';
 
 @Component({
   selector: 'app-test',
   standalone: true,
-  imports: [NavbarComponent, WatchLaterComponent,
+  imports: [ProfileNavbarComponent, WatchLaterComponent,
     MatRippleModule, RouterLink
   ],
   templateUrl: './profile.component.html',

@@ -12,12 +12,30 @@
         <div class="htmlElements">
             <div class="wrapper lg:pl-[15.5rem] max-sm:px-7">
                 <article
-                    class="mx-auto my-50 format xl:max-w-3xl format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                    <header class="mb-4 mt-50 lg:mb-6 not-format">
-
-                        <h1 class="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl">
-                            HTML Elements</h1>
-                    </header>
+                        class="mx-auto my-50 format xl:max-w-3xl format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                        <header class="mb-4 mt-50 lg:mb-6 not-format">
+                            <div class="title-btn">
+                                <h1 class="mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl">
+                                    HTML Elements</h1>
+                                <!-- ADD TO LIST -->
+                                <!-- <button matTooltip="Add to Watch Later" class="btn"
+                                    (click)="addToList('HTML Basics', '/htmlBasics', true)"
+                                    onClick="this.disabled=true;">
+                                    <svg width="27px" height="27px" viewBox="0 0 1920 1920"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M1585.963 1920 960.48 1544.711 335 1920V170.586C335 76.536 411.536 0 505.586 0h909.79c94.05 0 170.587 76.536 170.587 170.586V1920Z"
+                                                fill-rule="evenodd"></path>
+                                        </g>
+                                    </svg>
+                                </button> -->
+                                <app-add-to-list-btn></app-add-to-list-btn>
+                            </div>
+                        </header>
                     <p class="lead">HTML elements are the building blocks of HTML pages, representing different types of
                         content such as headings, paragraphs, images, links, forms, and more.</p>
                     <p>An HTML element generally consists of the following parts:
@@ -124,8 +142,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <div clas="footer">
         <app-footer></app-footer>
     </div>
