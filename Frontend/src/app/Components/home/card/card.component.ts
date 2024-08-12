@@ -2,13 +2,15 @@ import { Component, input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ripple, initTWE } from "tw-elements";
 import { RouterLink } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { LoginService } from '../../../Services/login.service';
 
 import { WatchLaterService } from '../../../Services/watch-later.service';
 import { Title } from '@angular/platform-browser';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 initTWE({ Ripple });
 
@@ -22,7 +24,7 @@ initTWE({ Ripple });
 export class CardComponent {
   loginService = inject(LoginService);
   watchLaterService = inject(WatchLaterService);
-  toastrService = inject(ToastrService);
+  snackBar = inject(MatSnackBar)
   httpClient = inject(HttpClient);
 
   watchLaterList: any[] = [];
@@ -53,8 +55,12 @@ export class CardComponent {
 
   addToList(title: string, link: string, status: boolean) {
     const list = { title, link, status }
-    this.toastrService.success("Added to your list")
-
+    this.snackBar.open('Added to your list', 'Close', {
+      duration: 4000,
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+      panelClass: ['red-snackbar', 'login-snackbar'],
+    });
     this.watchLaterService.addToList(list).subscribe(() => {
       console.log();
     })

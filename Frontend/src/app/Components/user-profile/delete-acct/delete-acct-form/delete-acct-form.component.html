@@ -13,15 +13,17 @@
 
         <mat-form-field class="field">
             <mat-label>Password</mat-label>
-            <input matInput formControlName="password" type="password" id="password"  required>
+            <input matInput formControlName="password" type="password" id="password" required>
         </mat-form-field>
 
         <mat-form-field class="field">
             <mat-label>Reason for leaving (optional)</mat-label>
-            <input matInput >
+            <input matInput>
         </mat-form-field>
         <div class="w-full p-2">
             <button (click)="deleteUser()"
                 class="mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">Submit</button>
         </div>
+
+      
     </div>

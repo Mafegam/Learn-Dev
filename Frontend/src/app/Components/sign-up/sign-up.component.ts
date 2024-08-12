@@ -3,21 +3,24 @@ import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormControl, FormGroup, Validator, FormGroupName, Validators } from '@angular/forms';
 import { LoginService } from '../../Services/login.service';
-import { ToastrService } from 'ngx-toastr';
 import { SignUpCredentials } from '../../Interfaces/sign-up-credentials';
 import { isEmpty } from 'rxjs';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule, MatSnackBarModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
   router = inject(Router);
   loginService: LoginService = inject(LoginService);
-  toastrService = inject(ToastrService);
+  snackBar = inject(MatSnackBar)
 
   newCredentials = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -47,17 +50,30 @@ export class SignUpComponent {
             if (signUpCredentials != null) {
               console.log("Success!");
               this.router.navigateByUrl("/profile")
-              this.toastrService.success("User created. Please Sign In!")
-            } else {
-              this.toastrService.error("User no creado")
-            }
+              this.snackBar.open('User created, please log in!!', 'Close', {
+                duration: 4000,
+                verticalPosition: 'top',
+                horizontalPosition: 'center',
+                panelClass: ['red-snackbar', 'login-snackbar'],
+              });
+            } 
           });
         } else {
-          this.toastrService.warning("Password doesn't match")
+          this.snackBar.open('Password doesn`t match!', 'Close', {
+            duration: 4000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+            panelClass: ['red-snackbar', 'login-snackbar'],
+          });
         }
       }
     } else {
-      this.toastrService.warning("Please fill all fields")
+      this.snackBar.open('Please fill all the fields', 'Close', {
+        duration: 4000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+        panelClass: ['red-snackbar', 'login-snackbar'],
+      });
     }
   }
 }
