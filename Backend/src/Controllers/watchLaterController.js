@@ -89,20 +89,27 @@ const watchLaterController = {
         }
     },
 
-    // alreadyExists: async (solicitud, respuesta) => {
-    //     try {
-    //         const existingTutorial = await watchLaterScheme.find(solicitud.params.link)
-    //         if (existingTutorial) {
-    //             console.log("Ya esta añadido");
-    //             respuesta.json({mensaje: "Good job"})
-    //         }
-    //     } catch (error) {
-    //         respuesta.json({
-    //             error: true,
-    //             mensaje: "Error"
-    //         });
-    //     }
-    // }
+    alreadyExists: async (solicitud, respuesta) => {
+        const { link } = solicitud.query; 
+        try {
+            const existingTutorial = await watchLaterScheme.findOne({ link: link })
+            if (existingTutorial) {
+                console.log("Already added");
+                respuesta.json({ 
+                    resultado: "Successful",
+                    mensaje: "Already added" })
+            } else {
+                respuesta.json({
+                    mensaje: "No added"
+                })
+            }
+        } catch (error) {
+            respuesta.json({
+                error: true,
+                mensaje: "Error"
+            });
+        }
+    }
 
 }
 

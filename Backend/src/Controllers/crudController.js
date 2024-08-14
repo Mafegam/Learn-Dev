@@ -11,7 +11,7 @@ const ControladorUsuarios = {
                 email: email,
                 password: hashPassword,
             });
-            
+
             const userCreated = await newUser.save();
             if (userCreated._id) {
                 respuesta.json({
@@ -20,7 +20,7 @@ const ControladorUsuarios = {
                     datos: userCreated._id
                 })
                 console.log(userCreated);
-            } else{
+            } else {
             }
         } catch (error) {
             console.log("Error: ", error);
@@ -97,6 +97,32 @@ const ControladorUsuarios = {
             respuesta.json({ error: true, mensaje: "Error deleting" });
         }
     },
+
+    chequearExistente: async (solicitud, respuesta) => {
+        const { email } = new mongoose.Types.ObjectId(solicitud.query)
+
+        // const { email } = solicitud.query; 
+        try {
+            const existingEmail = await userScheme.findOne({ email: email })
+            if (existingEmail) {
+                console.log("Already exists");
+                respuesta.json({
+                    resultado: "Successful",
+                    mensaje: "Already exists"
+                })
+            } else {
+                respuesta.json({
+                    mensaje: "Doesn't exist"
+                })
+            }
+        } catch (error) {
+            respuesta.json({
+                error: true,
+                mensaje: "Error"
+            });
+        }
+    }
+
 }
 
 export default ControladorUsuarios;
